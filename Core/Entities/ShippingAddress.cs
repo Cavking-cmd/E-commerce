@@ -7,5 +7,8 @@
         public required string State { get; set; }
         public required string PostalCode { get; set; }
         public required string Country { get; set; }
+        //Many to one relationship to customer
+        public Guid CustomerId { get; set; }
+        public Customer? Customer { get; set; }
     }
 }

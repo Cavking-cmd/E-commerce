@@ -1,6 +1,11 @@
 ﻿namespace E_commerce.Core.Entities.Enums
 {
-    public class OrderEnum
+    public enum OrderEnum
     {
+        Pending,
+        Processing,
+        Shipped,
+        Delivered,
+        Cancelled
     }
 }
