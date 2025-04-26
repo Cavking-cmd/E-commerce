@@ -2,8 +2,8 @@
 {
     public enum CouponEnum
     {
-        Active,
-        Expired,
-        Redeemed
+        Active =1,
+        Expired=2,
+        Redeemed=3
     }
 }

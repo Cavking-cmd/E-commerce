@@ -6,7 +6,7 @@
         public required string Password { get; set; }
 
         // Many to many relationship to roles
-        public ICollection<UserRole> UserRoles { get; set; } = [];
+        public ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
         // One to one Relationship to UserProfile
         public UserProfile? Profile { get; set; }
         // One to One relationship with Customer

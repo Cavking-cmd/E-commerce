@@ -1,6 +1,6 @@
-﻿namespace E_commerce.Core.Entities
-{
-    public class CustomerProfile
-    {
-    }
-}
+﻿//namespace E_commerce.Core.Entities
+//{
+//    public class CustomerProfile
+//    {
+//    }
+//}

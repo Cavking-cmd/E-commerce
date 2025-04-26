@@ -1,3 +1,7 @@
+using E_commerce.DataContext;
+using Microsoft.EntityFrameworkCore;
+using System;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<E_commerceDbContext>
+    (config => config.UseMySQL(builder.Configuration.GetConnectionString("CavkingECommerceApp")));
+
+
+
 
 var app = builder.Build();
 

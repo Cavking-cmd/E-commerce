@@ -1,6 +1,6 @@
 ﻿namespace E_commerce.Core.Entities
 {
-    public class UserRole
+    public class UserRole : BaseEntity
     {
         public Guid UserId { get; set; }
         public User? User { get; set; }

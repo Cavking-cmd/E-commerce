@@ -17,6 +17,5 @@ namespace E_commerce.Core.Entities
         //Many to Many Relationship with Coupon 
         public ICollection<Coupon> Coupons { get; set; } = [];
 
-
     }
 }

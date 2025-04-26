@@ -5,9 +5,9 @@
         public required string Name { get; set; }
         public required string Description { get; set; }
         //One to Many Relationship with Product
-        public ICollection<Product> Products { get; set; }
+        public ICollection<Product> Products { get; set; }=[];
 
         // One to Many Relationship with SubCategory
-        public ICollection<SubCategory> SubCategories { get; set; }
+        public ICollection<SubCategory> SubCategories { get; set; } = [];
     }
 }

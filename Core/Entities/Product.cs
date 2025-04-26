@@ -8,7 +8,7 @@
         public int StockQuantity { get; set; }
         public required string ImageUrl {  get; set; }
         //One to Many relationship to Review
-        public ICollection<Review> Reviews { get; set; } 
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
         //Many to One relationship with Category
         public Guid CategoryId { get; set; }
         public Category? Category { get; set; }
