@@ -12,6 +12,9 @@
         //Many to One relationship with Category
         public Guid CategoryId { get; set; }
         public Category? Category { get; set; }
-        
+
+        // Many to One relationship with SubCategory
+        public Guid? SubCategoryId { get; set; }
+        public SubCategory? SubCategory { get; set; }
     }
 }
