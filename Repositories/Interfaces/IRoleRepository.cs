@@ -1,6 +1,9 @@
-﻿namespace E_commerce.Repositories.Interfaces
+﻿using E_commerce.Core.Entities;
+
+namespace E_commerce.Repositories.Interfaces
 {
-    public class IRoleRepository
+    public interface IRoleRepository : IBaseRepository<Role>
     {
+        Task<Role?> GetRoleAsync(string roleName);
     }
 }
