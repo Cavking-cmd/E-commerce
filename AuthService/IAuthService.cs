@@ -1,6 +1,9 @@
-﻿namespace E_commerce.AuthService
+﻿using E_commerce.Core.Dtos.UserDtos;
+
+namespace E_commerce.AuthService
 {
-    public class IAuthService
+    public interface IAuthService
     {
+        string GenerateToken(UserDto userDto);
     }
 }

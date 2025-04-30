@@ -12,8 +12,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//Co
 builder.Services.AddDbContext<E_commerceDbContext>
     (config => config.UseMySQL(builder.Configuration.GetConnectionString("CavkingECommerceApp")));
+// Jwt Configurration
+var jwtSettings = builder.Configuration.GetSection("Jwt");
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
     {
@@ -23,10 +26,10 @@ builder.Services.AddAuthentication("Bearer")
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = "CavkingE-CommerceApp",
-            ValidAudience = "CavkingE-CommerceApp",
+            ValidIssuer = jwtSettings["Issuer"],
+            ValidAudience = jwtSettings["Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes("qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdghjlzxcvbnm"))
+                Encoding.UTF8.GetBytes(jwtSettings["Key"]))
         };
     });
 
