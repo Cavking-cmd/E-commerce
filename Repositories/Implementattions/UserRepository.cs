@@ -22,7 +22,7 @@ namespace E_commerce.Repositories.Implementattions
                 .FirstOrDefaultAsync(a => a.Id == id && a.IsDeleted == false);
         }
 
-        public Task<User?> GetEmailAsync(string email)
+        public Task<User?> GetUserByEmailAsync(string email)
         {
            return _context.Set<User>()
                  .Include(a => a.UserRoles)
