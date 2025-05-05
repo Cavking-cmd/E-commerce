@@ -1,10 +1,11 @@
-﻿namespace E_commerce.Core.Entities
+﻿namespace E_commerce.Core.Dtos.Request
 {
-    public class UserProfile : BaseEntity
+    public class UserProfileDto
     {
+        public Guid Id { get; set; }
+        public required string Email { get; set; }
         public required string FirstName { get; set; }
         public required string LastName { get; set; }
-        public required string Email { get; set; }
         public required string PhoneNumber { get; set; }
         public required string AddressLine { get; set; }
         public required string City { get; set; }

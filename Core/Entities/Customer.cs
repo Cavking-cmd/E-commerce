@@ -2,19 +2,20 @@
 {
     public class Customer : BaseEntity
     {
-        //public Guid UserId { get; set; }
         public Guid UserId { get; set; }
         public User? User { get; set; }
-        // One to many relationship withCartItem
-        public ICollection<CartItem> CartItems { get; set; } = [];
-        //One to many relationship with wishlistitems
-        public ICollection<WishlistItem> WishlistItems { get; set; } = [];
-        //One to Many Relationship with Order
-        public ICollection<Order>Orders { get; set; } = [];
-        //One to many relationship with review
-        public ICollection<Review>Reviews { get; set; } = [];
-        // One to Many relationship with shipping address
-        public ICollection<ShippingAddress> ShippingAddresses { get; set; }
+        public required string Email { get; set; }
+        public string? UserName { get; set; }
 
+        //  One-to-one relationship with Cart
+        public Cart? Cart { get; set; }
+
+        //  One-to-one relationship with Wishlist
+        public Wishlist? Wishlist { get; set; }
+
+        //  One-to-many relationships
+        public ICollection<Order> Orders { get; set; } = [];
+        public ICollection<Review> Reviews { get; set; } = [];
+        public ICollection<ShippingAddress> ShippingAddresses { get; set; } = [];
     }
 }

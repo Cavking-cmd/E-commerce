@@ -8,6 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Core\Dtos\Requests\**" />
+    <Compile Remove="Core\Dtos\Response\**" />
+    <Content Remove="Core\Dtos\Requests\**" />
+    <Content Remove="Core\Dtos\Response\**" />
+    <EmbeddedResource Remove="Core\Dtos\Requests\**" />
+    <EmbeddedResource Remove="Core\Dtos\Response\**" />
+    <None Remove="Core\Dtos\Requests\**" />
+    <None Remove="Core\Dtos\Response\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.15" />
@@ -21,11 +32,6 @@
     </PackageReference>
     <PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.14" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Core\Dtos\Response\" />
-    <Folder Include="Core\Dtos\Requests\" />
   </ItemGroup>
 
 </Project>

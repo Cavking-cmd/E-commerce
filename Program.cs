@@ -1,7 +1,7 @@
 using E_commerce.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System;
+using Microsoft.OpenApi.Models; // ?? Required for OpenAPI config
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,13 +9,50 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-//Co
-builder.Services.AddDbContext<E_commerceDbContext>
-    (config => config.UseMySQL(builder.Configuration.GetConnectionString("CavkingECommerceApp")));
-// Jwt Configurration
+
+// ? Swagger configuration with JWT Bearer support
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "E-commerce", Version = "v1" });
+
+    // ?? Add JWT Bearer definition
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = @"JWT Authorization header using the Bearer scheme. 
+                        Enter 'Bearer' [space] and then your token in the text box below.
+                        Example: 'Bearer 12345abcdef'",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer"
+    });
+
+    // ?? Apply it globally
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                },
+                Scheme = "oauth2",
+                Name = "Bearer",
+                In = ParameterLocation.Header,
+            },
+            new List<string>()
+        }
+    });
+});
+
+// ?? Configure MySQL DB context
+builder.Services.AddDbContext<E_commerceDbContext>(config =>
+    config.UseMySQL(builder.Configuration.GetConnectionString("CavkingECommerceApp")));
+
+// ?? JWT Authentication configuration
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
@@ -33,10 +70,6 @@ builder.Services.AddAuthentication("Bearer")
         };
     });
 
-
-
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -48,7 +81,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
+app.UseAuthentication(); // ? Must be before Authorization
 app.UseAuthorization();
 
 app.MapControllers();
