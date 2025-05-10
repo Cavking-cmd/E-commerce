@@ -6,5 +6,7 @@ namespace E_commerce.Services.Interfaces
     public interface ICustomerService
     {
         Task<BaseResponse<CustomerDto>> CreateCustomer(CreateCustomerRequestModel model);
+        Task<BaseResponse<ICollection<CustomerDto>>> GetAllAsync ();
+        Task<BaseResponse<CustomerDto>> GetAsync (Guid id);
     }
 }

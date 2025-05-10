@@ -9,10 +9,10 @@ namespace E_commerce.Repositories.Implementattions
     public class UserProfileRepository : BaseRepository<UserProfile>, IUserProfileRepository
     {
         private readonly E_commerceDbContext _context;
-        UserProfileRepository(E_commerceDbContext context) : base(context) 
-        {
-            _context = context;
-        }
+            public UserProfileRepository (E_commerceDbContext context) : base (context)
+            {
+                _context = context;
+            }
 
         public async  Task<ICollection<UserProfile?>> GetAll()
         {

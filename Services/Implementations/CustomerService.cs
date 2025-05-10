@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.Metrics;
+using System.Security.Cryptography.Xml;
 using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.Request;
 using E_commerce.Core.Entities;
@@ -36,7 +37,7 @@ namespace E_commerce.Services.Implementations
                 {
                     return new BaseResponse<CustomerDto>
                     {
-                        Message = "Customer already exist",
+                        Message = $"Customer with {model.Email} already exist",
                         Status = false,
                         Data = null,
                     };
@@ -46,6 +47,8 @@ namespace E_commerce.Services.Implementations
                     Email = model.Email,
                     Password = BCrypt.Net.BCrypt.HashPassword(model.Password),
                 };
+                await _userRepository.CreateAsync(user);
+
                 var userProfile = new UserProfile
                 {
                     FirstName = model.FirstName,
@@ -73,7 +76,6 @@ namespace E_commerce.Services.Implementations
                     Role = role,
                     User = user
                 };
-                await _userRepository.CreateAsync(user);
                 await _userRoleRepository.CreateAsync(userRole);
                 await _customerRepository.CreateAsync(customer);
                 await _userProfileRepository.CreateAsync(userProfile);
@@ -117,6 +119,113 @@ namespace E_commerce.Services.Implementations
                 };
             }
                 
+        }
+
+        public async Task<BaseResponse<ICollection<CustomerDto>>> GetAllAsync()
+        {
+            try 
+            {
+                var customer = await _customerRepository.GetAllAsync();
+                if (customer == null)
+                {
+                    return new BaseResponse<ICollection<CustomerDto>>
+                    {
+                        Message ="Customer not found",
+                        Status = false,
+                        Data= null,
+                    };
+                }
+                var listOfCustomer = customer.Select(a => new CustomerDto
+
+                {
+
+                    Id = a.Id,
+                    Email = a.Email,
+                    UserName = a.UserName,
+                    UserProfile = new UserProfileDto
+                    {
+                        Id = a.User.Profile.Id,
+                        Email = a.User.Profile.Email,
+                        FirstName = a.User.Profile.FirstName,
+                        LastName = a.User.Profile.LastName,
+                        PhoneNumber = a.User.Profile.PhoneNumber,
+                        AddressLine = a.User.Profile.AddressLine,
+                        City = a.User.Profile.City,
+                        State = a.User.Profile.State,
+                        PostalCode = a.User.Profile.PostalCode,
+                        Country = a.User.Profile.Country
+                    },
+                });
+                return new BaseResponse<ICollection<CustomerDto>>
+                {
+                    Message = "Customers Found",
+                    Status = true,
+                    Data = listOfCustomer.ToList(),
+                };
+
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<ICollection<CustomerDto>>
+                {
+                    Message = ex.Message,
+                    Status = false,
+                    Data = null,
+                };
+            }
+        }
+
+        public async Task<BaseResponse<CustomerDto>> GetAsync(Guid id)
+        {
+            try
+            {
+                var customer = await _customerRepository.GetAsync(a => a.Id == id && a.IsDeleted == false);
+                if (customer == null)
+                {
+                    return new BaseResponse<CustomerDto>
+                    {
+                        Message = $"Customer with id {id} does not exist",
+                        Status = false,
+                        Data = null,
+                    };
+                }
+                return new BaseResponse<CustomerDto>
+                {
+                    Message = $"Customer with this id {id} exists",
+                    Status = true,
+                    Data = new CustomerDto
+                    {
+
+                        Id = customer.Id,
+                        Email = customer.Email,
+                        UserName = customer.UserName,
+                        UserProfile = new UserProfileDto
+                        {
+                            Id = customer.User.Profile.Id,
+                            Email = customer.User.Profile.Email,
+                            FirstName = customer.User.Profile.FirstName,
+                            LastName = customer.User.Profile.LastName,
+                            PhoneNumber = customer.User.Profile.PhoneNumber,
+                            AddressLine = customer.User.Profile.AddressLine,
+                            City = customer.User.Profile.City,
+                            State = customer.User.Profile.State,
+                            PostalCode = customer.User.Profile.PostalCode,
+                            Country = customer.User.Profile.Country
+                        },
+                    },
+                };
+            }
+            
+
+            catch (Exception ex)
+            {
+                return new BaseResponse<CustomerDto>
+                {
+                    Message = ex.Message,
+                    Status = false,
+                    Data = null,
+                };
+            }
         }
     }
 }
