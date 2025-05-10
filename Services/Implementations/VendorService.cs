@@ -1,4 +1,4 @@
-﻿using System.Linq.Expressions;
+﻿﻿using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
 using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.Request;
@@ -57,7 +57,8 @@ namespace E_commerce.Services.Implementations
                     City = model.City,
                     State = model.State,
                     PostalCode = model.PostalCode,
-                    Country = model.Country
+                    Country = model.Country,
+                    UserId = user.Id
                 };
                 var vendor = new Vendor
                 {
@@ -94,6 +95,7 @@ namespace E_commerce.Services.Implementations
                         UserProfile = new UserProfileDto
                         {
                             Id = userProfile.Id,
+                            UserId = userProfile.UserId,
                             Email = userProfile.Email,
                             FirstName = userProfile.FirstName,
                             LastName = userProfile.LastName,
@@ -142,6 +144,7 @@ namespace E_commerce.Services.Implementations
                     UserProfile = new UserProfileDto
                     {
                         Id = a.User.Profile.Id,
+                        UserId = a.User.Profile.UserId,
                         Email = a.User.Profile.Email,
                         FirstName = a.User.Profile.FirstName,
                         LastName = a.User.Profile.LastName,
@@ -201,6 +204,7 @@ namespace E_commerce.Services.Implementations
                         UserProfile = new UserProfileDto
                         {
                             Id = vendor.User.Profile.Id,
+                            UserId = vendor.User.Profile.UserId,
                             Email = vendor.User.Profile.Email,
                             FirstName = vendor.User.Profile.FirstName,
                             LastName = vendor.User.Profile.LastName,

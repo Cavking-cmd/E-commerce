@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_commerce.Migrations
 {
     [DbContext(typeof(E_commerceDbContext))]
-    [Migration("20250510011019_FIRST")]
+    [Migration("20250510024231_FIRST")]
     partial class FIRST
     {
         /// <inheritdoc />
@@ -473,12 +473,7 @@ namespace E_commerce.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<Guid?>("ProfileId")
-                        .HasColumnType("char(36)");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ProfileId");
 
                     b.ToTable("Users");
                 });
@@ -531,7 +526,13 @@ namespace E_commerce.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("char(36)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("UserProfiles");
                 });
@@ -811,13 +812,15 @@ namespace E_commerce.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("E_commerce.Core.Entities.User", b =>
+            modelBuilder.Entity("E_commerce.Core.Entities.UserProfile", b =>
                 {
-                    b.HasOne("E_commerce.Core.Entities.UserProfile", "Profile")
-                        .WithMany()
-                        .HasForeignKey("ProfileId");
+                    b.HasOne("E_commerce.Core.Entities.User", "User")
+                        .WithOne("Profile")
+                        .HasForeignKey("E_commerce.Core.Entities.UserProfile", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Profile");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("E_commerce.Core.Entities.UserRole", b =>
@@ -930,6 +933,8 @@ namespace E_commerce.Migrations
             modelBuilder.Entity("E_commerce.Core.Entities.User", b =>
                 {
                     b.Navigation("Customer");
+
+                    b.Navigation("Profile");
 
                     b.Navigation("UserRoles");
 

@@ -59,7 +59,8 @@ namespace E_commerce.Services.Implementations
                     City = model.City,
                     State = model.State,
                     PostalCode = model.PostalCode,
-                    Country = model.Country
+                    Country = model.Country,
+                    UserId = user.Id
                 };
                 var customer = new Customer
                 {
@@ -94,6 +95,7 @@ namespace E_commerce.Services.Implementations
                         UserProfile = new UserProfileDto
                         {
                             Id = userProfile.Id,
+                            UserId = userProfile.UserId,
                             Email = userProfile.Email,
                             FirstName = userProfile.FirstName,
                             LastName = userProfile.LastName,
@@ -145,6 +147,7 @@ namespace E_commerce.Services.Implementations
                     UserProfile = new UserProfileDto
                     {
                         Id = a.User.Profile.Id,
+                        UserId = a.User.Profile.UserId,
                         Email = a.User.Profile.Email,
                         FirstName = a.User.Profile.FirstName,
                         LastName = a.User.Profile.LastName,
@@ -202,6 +205,7 @@ namespace E_commerce.Services.Implementations
                         UserProfile = new UserProfileDto
                         {
                             Id = customer.User.Profile.Id,
+                            UserId = customer.User.Profile.UserId,
                             Email = customer.User.Profile.Email,
                             FirstName = customer.User.Profile.FirstName,
                             LastName = customer.User.Profile.LastName,

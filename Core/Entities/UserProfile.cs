@@ -11,5 +11,10 @@
         public required string State { get; set; }
         public required string PostalCode { get; set; }
         public required string Country { get; set; }
+
+        // Foreign key to User
+        public Guid UserId { get; set; }
+        // Navigation property to User
+        public User? User { get; set; }
     }
 }
