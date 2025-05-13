@@ -18,7 +18,7 @@ namespace E_commerce.Controllers
             _userService = userService;
             _authService = authService;
         }
-        [Authorize]
+        //[Authorize]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestModel model)
         {
@@ -36,7 +36,7 @@ namespace E_commerce.Controllers
             
             return Unauthorized(result);
         }
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
@@ -48,7 +48,7 @@ namespace E_commerce.Controllers
 
             return NotFound(new { Message = "User not found." });
         }
-        [Authorize]
+        //[Authorize]
         [HttpPut("{email}")]
         public async Task<IActionResult> Update([FromRoute] string email, [FromBody] LoginRequestModel request)
         {

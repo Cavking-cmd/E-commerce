@@ -31,7 +31,7 @@ namespace E_commerce.Services.Implementations
         {
             try
             {
-                var exist = await _vendorRepository.GetAsync(a => a.Email == model.Email);
+                var exist = await _vendorRepository.CheckAsync(a => a.Email == model.Email);
                 if (exist == null)
                 {
                     return new BaseResponse<VendorDto>()

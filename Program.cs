@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models; // ?? Required for OpenAPI config
 using System.Text;
+using E_commerce.AuthService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -78,6 +79,10 @@ builder.Services.AddAuthentication("Bearer")
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IVendorService, VendorService>();
+
+//builder.Services.AddScoped<IAuthService, AuthService>();
+// Would still need to like actually do some proper injections for some services inside the
+// Auth service controllers
 
 // Register Repositories
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
