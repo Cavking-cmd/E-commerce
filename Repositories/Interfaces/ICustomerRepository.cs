@@ -7,6 +7,6 @@ namespace E_commerce.Repositories.Interfaces
     {
         Task<Customer> GetAsync(Guid id);
         Task<Customer> GetAsync(Expression<Func<Customer, bool>> predicate);
-        Task<ICollection<Customer>> GetAllAsync();
+        Task<ICollection<Customer>>GetAllAsync();
     }
 }
