@@ -1,6 +1,10 @@
-﻿namespace E_commerce.Services.Interfaces
+﻿using E_commerce.Core.Dtos;
+using E_commerce.Core.Dtos.Request;
+
+namespace E_commerce.Services.Interfaces
 {
-    public class ISubCategoryService
+    public interface ISubCategoryService
     {
+        Task<BaseResponse<SubCategoryDto>> CreateSubCategory(CreateSubCategoryRequestModel model);
     }
 }

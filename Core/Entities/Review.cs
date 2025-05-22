@@ -2,7 +2,7 @@
 
 namespace E_commerce.Core.Entities
 {
-    public class Review
+    public class Review : BaseEntity
     {
        
         public Guid ProductId { get; set; }

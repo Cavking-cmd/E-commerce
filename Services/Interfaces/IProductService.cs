@@ -9,5 +9,6 @@ namespace E_commerce.Services.Interfaces
         Task<BaseResponse<ProductDto>> CreateProduct(CreateProductRequestModel model);
         Task<BaseResponse<ICollection<ProductDto>>> GetAll();
         Task<BaseResponse<ProductDto>> GetAsync(Guid id);
+        Task<BaseResponse<ProductDto>> UpdateProduct(string productName ,UpdateProductModel model);
     }
 }

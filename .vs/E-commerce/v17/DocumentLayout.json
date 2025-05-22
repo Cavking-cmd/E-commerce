@@ -3,20 +3,100 @@
   "WorkspaceRootPath": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Migrations\\20250520181621_SECOND.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250520181621_SECOND.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\implementattions\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\implementattions\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\entities\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\entities\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\implementattions\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\implementattions\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\interfaces\\icartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\interfaces\\icartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\services\\implementations\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:services\\implementations\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:services\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\services\\implementations\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:services\\implementations\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\dtos\\request\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\dtos\\request\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\implementattions\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\implementattions\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\ReviewRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Repositories\\Implementattions\\ReviewRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\dtos\\request\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\dtos\\request\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\dtos\\request\\subcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\dtos\\request\\subcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\entities\\subcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\entities\\subcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\implementattions\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\implementattions\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\ICategoryService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\Interfaces\\ICategoryService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\ReviewDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Core\\Dtos\\Request\\ReviewDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IReviewRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Repositories\\Interfaces\\IReviewRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Migrations\\20250520181621_SECOND.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250520181621_SECOND.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\interfaces\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,10 +113,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\implementattions\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\implementattions\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\implementattions\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\implementattions\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\entities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,16 +135,8 @@
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\implementattions\\vendorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\services\\implementations\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:services\\implementations\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\implementattions\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\implementattions\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -85,10 +153,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\entities\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\entities\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\dtos\\request\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\dtos\\request\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\dtos\\request\\userprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -119,10 +183,6 @@
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\implementattions\\userrolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\entities\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\entities\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\entities\\wishlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\entities\\wishlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -147,10 +207,6 @@
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:services\\implementations\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\interfaces\\iuserprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\interfaces\\iuserprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -169,10 +225,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\dtos\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\dtos\\baseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\authservice\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -215,10 +267,6 @@
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\entities\\coupon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -235,10 +283,6 @@
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:migrations\\20250510024231_first.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\implementattions\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\implementattions\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -247,16 +291,8 @@
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\dtos\\request\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\dtos\\request\\subcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\dtos\\request\\subcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\implementattions\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\implementattions\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\services\\implementations\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:services\\implementations\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\repositories\\interfaces\\isubcategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -271,8 +307,16 @@
       "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:repositories\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|c:\\users\\obalo\\onedrive\\desktop\\e-commerce\\core\\dtos\\request\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8993A88F-B772-4FE3-A749-2BA64E3CFB5B}|E-commerce.csproj|solutionrelative:core\\dtos\\request\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\SubCategoryService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\Implementations\\SubCategoryService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\CategoryService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\Implementations\\CategoryService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\ISubCategoryService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\Interfaces\\ISubCategoryService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -282,36 +326,192 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20250520181621_SECOND.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Migrations\\20250520181621_SECOND.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250520181621_SECOND.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Migrations\\20250520181621_SECOND.cs",
-              "RelativeToolTip": "Migrations\\20250520181621_SECOND.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAiwDwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Order.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Order.cs",
+              "RelativeToolTip": "Core\\Entities\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T18:16:22.308Z",
+              "WhenOpened": "2025-05-22T17:21:48.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CartRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\CartRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementattions\\CartRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\CartRepository.cs*",
+              "RelativeToolTip": "Repositories\\Implementattions\\CartRepository.cs*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAUwCgAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:12:58.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ICartRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ICartRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICartRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ICartRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ICartRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T17:12:45.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\ProductService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\ProductService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\ProductService.cs",
+              "RelativeToolTip": "Services\\Implementations\\ProductService.cs",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAiwJAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T14:50:49.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\IProductService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IProductService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\IProductService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T14:50:49.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\CustomerService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\CustomerService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\CustomerService.cs",
+              "RelativeToolTip": "Services\\Implementations\\CustomerService.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAgwFkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T02:39:32.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementattions\\CustomerRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\CustomerRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementattions\\CustomerRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T13:38:38.334Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Review.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Review.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Review.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Review.cs",
-              "RelativeToolTip": "Core\\Entities\\Review.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAHAAAAAAAAAA==",
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Cart.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Cart.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Cart.cs",
+              "RelativeToolTip": "Core\\Entities\\Cart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T18:07:50.736Z"
+              "WhenOpened": "2025-05-01T16:51:54.763Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
+              "Title": "ProductDto.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\ProductDto.cs",
+              "RelativeDocumentMoniker": "Core\\Dtos\\Request\\ProductDto.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\ProductDto.cs",
+              "RelativeToolTip": "Core\\Dtos\\Request\\ProductDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T14:50:47.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Product.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Product.cs",
+              "RelativeToolTip": "Core\\Entities\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T20:43:05.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T16:51:44.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\UserService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\UserService.cs",
+              "RelativeToolTip": "Services\\Implementations\\UserService.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAkwAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T19:20:28.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementattions\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\ProductRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementattions\\ProductRepository.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T19:46:01.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "SubCategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\SubCategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\SubCategoryService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\SubCategoryService.cs",
+              "RelativeToolTip": "Services\\Implementations\\SubCategoryService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAADwvx4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T09:30:55.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "SubCategory.cs",
               "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\SubCategory.cs",
               "RelativeDocumentMoniker": "Core\\Entities\\SubCategory.cs",
@@ -323,752 +523,56 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
-              "Title": "CategoryDto.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\CategoryDto.cs",
-              "RelativeDocumentMoniker": "Core\\Dtos\\Request\\CategoryDto.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\CategoryDto.cs",
-              "RelativeToolTip": "Core\\Dtos\\Request\\CategoryDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Review.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Review.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Review.cs",
+              "RelativeToolTip": "Core\\Entities\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:50:49.844Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "SubCategoryDto.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\SubCategoryDto.cs",
-              "RelativeDocumentMoniker": "Core\\Dtos\\Request\\SubCategoryDto.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\SubCategoryDto.cs",
-              "RelativeToolTip": "Core\\Dtos\\Request\\SubCategoryDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:50:49.786Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 62,
-              "Title": "CategoryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\CategoryRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementattions\\CategoryRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\CategoryRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementattions\\CategoryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:50:49.722Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 63,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\ProductService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\ProductService.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\ProductService.cs",
-              "RelativeToolTip": "Services\\Implementations\\ProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:50:49.604Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\IProductService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IProductService.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\IProductService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:50:49.541Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 64,
-              "Title": "ISubCategoryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ISubCategoryRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ISubCategoryRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ISubCategoryRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\ISubCategoryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:50:49.896Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 65,
-              "Title": "SubCategoryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\SubCategoryRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementattions\\SubCategoryRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\SubCategoryRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementattions\\SubCategoryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:50:49.95Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 66,
-              "Title": "ICategoryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ICategoryRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICategoryRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ICategoryRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\ICategoryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:50:49.661Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 67,
-              "Title": "ProductDto.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\ProductDto.cs",
-              "RelativeDocumentMoniker": "Core\\Dtos\\Request\\ProductDto.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\ProductDto.cs",
-              "RelativeToolTip": "Core\\Dtos\\Request\\ProductDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:50:47.626Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementattions\\ProductRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\ProductRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementattions\\ProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T19:46:01.93Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
-              "Title": "IProductRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IProductRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IProductRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IProductRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T19:45:59.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "VendorController.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Controllers\\VendorController.cs",
-              "RelativeDocumentMoniker": "Controllers\\VendorController.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Controllers\\VendorController.cs",
-              "RelativeToolTip": "Controllers\\VendorController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAASwBoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T08:45:12.895Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "VendorService.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\VendorService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\VendorService.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\VendorService.cs",
-              "RelativeToolTip": "Services\\Implementations\\VendorService.cs",
-              "ViewState": "AgIAAJgAAAAAAAAAAAAgwHEAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T04:52:04.248Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Controllers\\CustomerController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "Controllers\\CustomerController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAIAxwBUAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T15:15:57.618Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAD0AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T18:32:43.609Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "CustomerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\CustomerRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementattions\\CustomerRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\CustomerRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementattions\\CustomerRepository.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwBAAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T13:38:38.334Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BaseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\BaseRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementattions\\BaseRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\BaseRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementattions\\BaseRepository.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAawBgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T02:38:01.332Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\User.cs",
-              "RelativeToolTip": "Core\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T02:32:39.452Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BaseEntity.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\BaseEntity.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\BaseEntity.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\BaseEntity.cs",
-              "RelativeToolTip": "Core\\Entities\\BaseEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:51:51.058Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "RoleRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\RoleRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementattions\\RoleRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\RoleRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementattions\\RoleRepository.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAawBYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T16:48:00.457Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Role.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Role.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Role.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Role.cs",
-              "RelativeToolTip": "Core\\Entities\\Role.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:51:42.93Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementattions\\UnitOfWork.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UnitOfWork.cs",
-              "RelativeToolTip": "Repositories\\Implementattions\\UnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAawA4AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T03:45:51.971Z"
+              "WhenOpened": "2025-05-20T18:07:50.736Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "VendorRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\VendorRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementattions\\VendorRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\VendorRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementattions\\VendorRepository.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAASwCYAAAAPAAAAAAAAAA==",
+              "Title": "ReviewRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\ReviewRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementattions\\ReviewRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\ReviewRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementattions\\ReviewRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T04:52:03.024Z"
+              "WhenOpened": "2025-05-21T09:10:37.332Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CustomerService.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\CustomerService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\CustomerService.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\CustomerService.cs",
-              "RelativeToolTip": "Services\\Implementations\\CustomerService.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAWwB4AAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T02:39:32.372Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwDIAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T03:18:35.236Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Customer.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Customer.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Customer.cs",
-              "RelativeToolTip": "Core\\Entities\\Customer.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAawBIAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T18:52:07.502Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "UserProfile.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\UserProfile.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\UserProfile.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\UserProfile.cs",
-              "RelativeToolTip": "Core\\Entities\\UserProfile.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA2wAUAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T19:24:34.64Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "UserRole.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\UserRole.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\UserRole.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\UserRole.cs",
-              "RelativeToolTip": "Core\\Entities\\UserRole.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T19:12:14.504Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Vendor.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Vendor.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Vendor.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Vendor.cs",
-              "RelativeToolTip": "Core\\Entities\\Vendor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T05:32:25.484Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 15,
               "Title": "CustomerDto.cs",
               "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\CustomerDto.cs",
               "RelativeDocumentMoniker": "Core\\Dtos\\Request\\CustomerDto.cs",
               "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\CustomerDto.cs",
               "RelativeToolTip": "Core\\Dtos\\Request\\CustomerDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-03T14:12:11.973Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UserProfileDto.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\UserProfileDto.cs",
-              "RelativeDocumentMoniker": "Core\\Dtos\\Request\\UserProfileDto.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\UserProfileDto.cs",
-              "RelativeToolTip": "Core\\Dtos\\Request\\UserProfileDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 16,
+              "Title": "SubCategoryDto.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\SubCategoryDto.cs",
+              "RelativeDocumentMoniker": "Core\\Dtos\\Request\\SubCategoryDto.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\SubCategoryDto.cs",
+              "RelativeToolTip": "Core\\Dtos\\Request\\SubCategoryDto.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAIA1wBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T04:50:57.307Z"
+              "WhenOpened": "2025-05-20T14:50:49.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "20250510024231_FIRST.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Migrations\\20250510024231_FIRST.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250510024231_FIRST.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Migrations\\20250510024231_FIRST.cs",
-              "RelativeToolTip": "Migrations\\20250510024231_FIRST.cs",
-              "ViewState": "AgIAAKkCAAAAAAAAAAAuwLgCAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-10T02:42:32.01Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "VendorDto.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\VendorDto.cs",
-              "RelativeDocumentMoniker": "Core\\Dtos\\Request\\VendorDto.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\VendorDto.cs",
-              "RelativeToolTip": "Core\\Dtos\\Request\\VendorDto.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAzwAcAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T04:52:04.293Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "UserRoleRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UserRoleRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementattions\\UserRoleRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UserRoleRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementattions\\UserRoleRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:51:44.112Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "UserProfileRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UserProfileRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementattions\\UserProfileRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UserProfileRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementattions\\UserProfileRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T02:42:56.01Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementattions\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UserRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementattions\\UserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T09:53:37.501Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "WishlistItem.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\WishlistItem.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\WishlistItem.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\WishlistItem.cs",
-              "RelativeToolTip": "Core\\Entities\\WishlistItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T16:03:49.831Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Cart.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Cart.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Cart.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Cart.cs",
-              "RelativeToolTip": "Core\\Entities\\Cart.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:51:54.763Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Wishlist.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Wishlist.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Wishlist.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Wishlist.cs",
-              "RelativeToolTip": "Core\\Entities\\Wishlist.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T14:38:30.115Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "IVendorRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IVendorRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IVendorRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IVendorRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IVendorRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T04:52:04.162Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "IVendorService.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\IVendorService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IVendorService.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\IVendorService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IVendorService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T04:52:04.197Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ICustomerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ICustomerRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICustomerRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ICustomerRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\ICustomerRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T13:39:04.831Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "ICustomerService.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\ICustomerService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\ICustomerService.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\ICustomerService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\ICustomerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T02:39:30.97Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\UserService.cs",
-              "RelativeDocumentMoniker": "Services\\Implementations\\UserService.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\UserService.cs",
-              "RelativeToolTip": "Services\\Implementations\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHIAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T19:20:28.554Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUnitOfWork.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUnitOfWork.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IUnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T03:49:37.878Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "IUserProfileRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUserProfileRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserProfileRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUserProfileRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IUserProfileRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T02:43:21.83Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\AuthService\\AuthService.cs",
-              "RelativeDocumentMoniker": "AuthService\\AuthService.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\AuthService\\AuthService.cs",
-              "RelativeToolTip": "AuthService\\AuthService.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAlwA8AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T01:38:29.971Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "IBaseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IBaseRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IBaseRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IBaseRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IBaseRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T01:57:03.147Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-26T18:35:32.555Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUserRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T01:44:48.041Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "BaseResponse.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\BaseResponse.cs",
-              "RelativeDocumentMoniker": "Core\\Dtos\\BaseResponse.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\BaseResponse.cs",
-              "RelativeToolTip": "Core\\Dtos\\BaseResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T17:20:13.248Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "IRoleRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IRoleRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IRoleRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IRoleRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IRoleRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T01:45:38.056Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\IUserService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\IUserService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:51:44.177Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\UserDtos\\UserDto.cs",
-              "RelativeDocumentMoniker": "Core\\Dtos\\UserDtos\\UserDto.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\UserDtos\\UserDto.cs",
-              "RelativeToolTip": "Core\\Dtos\\UserDtos\\UserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T10:02:52.403Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "IUserRoleRepository.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUserRoleRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRoleRepository.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUserRoleRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IUserRoleRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T01:45:10.406Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "E-commerce.csproj",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\E-commerce.csproj",
-              "RelativeDocumentMoniker": "E-commerce.csproj",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\E-commerce.csproj",
-              "RelativeToolTip": "E-commerce.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-30T01:38:26.902Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "E-commerceDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\DataContext\\E-commerceDbContext.cs",
-              "RelativeDocumentMoniker": "DataContext\\E-commerceDbContext.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\DataContext\\E-commerceDbContext.cs",
-              "RelativeToolTip": "DataContext\\E-commerceDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T18:06:51.601Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "CustomerProfile.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\CustomerProfile.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\CustomerProfile.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\CustomerProfile.cs",
-              "RelativeToolTip": "Core\\Entities\\CustomerProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T19:13:12.218Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "VendorProfile.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\VendorProfile.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\VendorProfile.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\VendorProfile.cs",
-              "RelativeToolTip": "Core\\Entities\\VendorProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T19:12:41.374Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "CartItem.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\CartItem.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\CartItem.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\CartItem.cs",
-              "RelativeToolTip": "Core\\Entities\\CartItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T16:57:30.471Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "CouponOrder.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\CouponOrder.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\CouponOrder.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\CouponOrder.cs",
-              "RelativeToolTip": "Core\\Entities\\CouponOrder.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T02:36:49.43Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\AuthService\\IAuthService.cs",
-              "RelativeDocumentMoniker": "AuthService\\IAuthService.cs",
-              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\AuthService\\IAuthService.cs",
-              "RelativeToolTip": "AuthService\\IAuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T01:38:28.342Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 18,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Category.cs",
               "RelativeDocumentMoniker": "Core\\Entities\\Category.cs",
@@ -1080,7 +584,691 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\CategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\CategoryService.cs",
+              "RelativeToolTip": "Services\\Implementations\\CategoryService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAACsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T09:10:37.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "ISubCategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\ISubCategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ISubCategoryService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\ISubCategoryService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ISubCategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T09:31:25.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementattions\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\BaseRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementattions\\BaseRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T02:38:01.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "CategoryDto.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\CategoryDto.cs",
+              "RelativeDocumentMoniker": "Core\\Dtos\\Request\\CategoryDto.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\CategoryDto.cs",
+              "RelativeToolTip": "Core\\Dtos\\Request\\CategoryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T14:50:49.844Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "20250520181621_SECOND.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Migrations\\20250520181621_SECOND.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250520181621_SECOND.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Migrations\\20250520181621_SECOND.cs",
+              "RelativeToolTip": "Migrations\\20250520181621_SECOND.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAiwDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T18:16:22.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IReviewRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IReviewRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IReviewRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IReviewRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IReviewRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T09:10:35.692Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ReviewDto.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\ReviewDto.cs",
+              "RelativeDocumentMoniker": "Core\\Dtos\\Request\\ReviewDto.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\ReviewDto.cs",
+              "RelativeToolTip": "Core\\Dtos\\Request\\ReviewDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T09:10:37.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ICategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ICategoryService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\ICategoryService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ICategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T09:10:37.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementattions\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\CategoryRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementattions\\CategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T14:50:49.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "ISubCategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ISubCategoryRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ISubCategoryRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ISubCategoryRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ISubCategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T14:50:49.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "SubCategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\SubCategoryRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementattions\\SubCategoryRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\SubCategoryRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementattions\\SubCategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T14:50:49.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "ICategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ICategoryRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICategoryRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ICategoryRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ICategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T14:50:49.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IProductRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IProductRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T19:45:59.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "VendorController.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Controllers\\VendorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VendorController.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Controllers\\VendorController.cs",
+              "RelativeToolTip": "Controllers\\VendorController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAASwBoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T08:45:12.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "VendorService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\VendorService.cs",
+              "RelativeDocumentMoniker": "Services\\Implementations\\VendorService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Implementations\\VendorService.cs",
+              "RelativeToolTip": "Services\\Implementations\\VendorService.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAgwHEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T04:52:04.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAIAxwBUAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T15:15:57.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAD0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T18:32:43.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\User.cs",
+              "RelativeToolTip": "Core\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T02:32:39.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\BaseEntity.cs",
+              "RelativeToolTip": "Core\\Entities\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T16:51:51.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "RoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\RoleRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementattions\\RoleRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\RoleRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementattions\\RoleRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAawBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T16:48:00.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Role.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Role.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Role.cs",
+              "RelativeToolTip": "Core\\Entities\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T16:51:42.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementattions\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UnitOfWork.cs",
+              "RelativeToolTip": "Repositories\\Implementattions\\UnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAawA4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T03:45:51.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "VendorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\VendorRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementattions\\VendorRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\VendorRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementattions\\VendorRepository.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAASwCYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T04:52:03.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwDIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T03:18:35.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Customer.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Customer.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Customer.cs",
+              "RelativeToolTip": "Core\\Entities\\Customer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAawBIAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T18:52:07.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "UserProfile.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\UserProfile.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\UserProfile.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\UserProfile.cs",
+              "RelativeToolTip": "Core\\Entities\\UserProfile.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA2wAUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T19:24:34.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "UserRole.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\UserRole.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\UserRole.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\UserRole.cs",
+              "RelativeToolTip": "Core\\Entities\\UserRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T19:12:14.504Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Vendor.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Vendor.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Vendor.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Vendor.cs",
+              "RelativeToolTip": "Core\\Entities\\Vendor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T05:32:25.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "UserProfileDto.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\UserProfileDto.cs",
+              "RelativeDocumentMoniker": "Core\\Dtos\\Request\\UserProfileDto.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\UserProfileDto.cs",
+              "RelativeToolTip": "Core\\Dtos\\Request\\UserProfileDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T04:50:57.307Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "20250510024231_FIRST.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Migrations\\20250510024231_FIRST.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250510024231_FIRST.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Migrations\\20250510024231_FIRST.cs",
+              "RelativeToolTip": "Migrations\\20250510024231_FIRST.cs",
+              "ViewState": "AgIAAKkCAAAAAAAAAAAuwLgCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T02:42:32.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "VendorDto.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\VendorDto.cs",
+              "RelativeDocumentMoniker": "Core\\Dtos\\Request\\VendorDto.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\Request\\VendorDto.cs",
+              "RelativeToolTip": "Core\\Dtos\\Request\\VendorDto.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAzwAcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T04:52:04.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "UserRoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UserRoleRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementattions\\UserRoleRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UserRoleRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementattions\\UserRoleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T16:51:44.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "UserProfileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UserProfileRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementattions\\UserProfileRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UserProfileRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementattions\\UserProfileRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T02:42:56.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementattions\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Implementattions\\UserRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementattions\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T09:53:37.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "WishlistItem.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\WishlistItem.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\WishlistItem.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\WishlistItem.cs",
+              "RelativeToolTip": "Core\\Entities\\WishlistItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T16:03:49.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Wishlist.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Wishlist.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Wishlist.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Wishlist.cs",
+              "RelativeToolTip": "Core\\Entities\\Wishlist.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T14:38:30.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "IVendorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IVendorRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IVendorRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IVendorRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IVendorRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T04:52:04.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "IVendorService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\IVendorService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IVendorService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\IVendorService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IVendorService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T04:52:04.197Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ICustomerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ICustomerRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICustomerRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\ICustomerRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ICustomerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-03T13:39:04.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "ICustomerService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\ICustomerService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ICustomerService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Services\\Interfaces\\ICustomerService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ICustomerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T02:39:30.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T03:49:37.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "IUserProfileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUserProfileRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserProfileRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUserProfileRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IUserProfileRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T02:43:21.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\AuthService\\AuthService.cs",
+              "RelativeDocumentMoniker": "AuthService\\AuthService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\AuthService\\AuthService.cs",
+              "RelativeToolTip": "AuthService\\AuthService.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAlwA8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T01:38:29.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IBaseRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IBaseRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IBaseRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T01:57:03.147Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 52,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-26T18:35:32.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T01:44:48.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "BaseResponse.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\BaseResponse.cs",
+              "RelativeDocumentMoniker": "Core\\Dtos\\BaseResponse.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\BaseResponse.cs",
+              "RelativeToolTip": "Core\\Dtos\\BaseResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T17:20:13.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "IRoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IRoleRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IRoleRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IRoleRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IRoleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T01:45:38.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\UserDtos\\UserDto.cs",
+              "RelativeDocumentMoniker": "Core\\Dtos\\UserDtos\\UserDto.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Dtos\\UserDtos\\UserDto.cs",
+              "RelativeToolTip": "Core\\Dtos\\UserDtos\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T10:02:52.403Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "IUserRoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUserRoleRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRoleRepository.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Repositories\\Interfaces\\IUserRoleRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IUserRoleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T01:45:10.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "E-commerce.csproj",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\E-commerce.csproj",
+              "RelativeDocumentMoniker": "E-commerce.csproj",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\E-commerce.csproj",
+              "RelativeToolTip": "E-commerce.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-30T01:38:26.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "E-commerceDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\DataContext\\E-commerceDbContext.cs",
+              "RelativeDocumentMoniker": "DataContext\\E-commerceDbContext.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\DataContext\\E-commerceDbContext.cs",
+              "RelativeToolTip": "DataContext\\E-commerceDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T18:06:51.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "CustomerProfile.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\CustomerProfile.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\CustomerProfile.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\CustomerProfile.cs",
+              "RelativeToolTip": "Core\\Entities\\CustomerProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T19:13:12.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "VendorProfile.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\VendorProfile.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\VendorProfile.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\VendorProfile.cs",
+              "RelativeToolTip": "Core\\Entities\\VendorProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T19:12:41.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\CartItem.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\CartItem.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\CartItem.cs",
+              "RelativeToolTip": "Core\\Entities\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T16:57:30.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "CouponOrder.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\CouponOrder.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\CouponOrder.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\CouponOrder.cs",
+              "RelativeToolTip": "Core\\Entities\\CouponOrder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T02:36:49.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\AuthService\\IAuthService.cs",
+              "RelativeDocumentMoniker": "AuthService\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\AuthService\\IAuthService.cs",
+              "RelativeToolTip": "AuthService\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T01:38:28.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
               "Title": "Coupon.cs",
               "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Coupon.cs",
               "RelativeDocumentMoniker": "Core\\Entities\\Coupon.cs",
@@ -1092,7 +1280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 68,
               "Title": "CouponEnum.cs",
               "DocumentMoniker": "C:\\Users\\obalo\\OneDrive\\Desktop\\E-commerce\\Core\\Entities\\Enums\\CouponEnum.cs",
               "RelativeDocumentMoniker": "Core\\Entities\\Enums\\CouponEnum.cs",

@@ -1,5 +1,6 @@
 ﻿using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.Request;
+using E_commerce.Core.Entities;
 using E_commerce.Repositories.Interfaces;
 using E_commerce.Services.Interfaces;
 
@@ -27,6 +28,22 @@ namespace E_commerce.Services.Implementations
                         Data = null
                     };
                 }
+                var category = new Category
+                {
+                    Name = model.Name,
+                    Description = model.Description,
+                };
+                 await _categoryRepository.CreateAsync(category);
+                return new BaseResponse<CategoryDto>
+                {
+                    Message = "Category created Sucessfully",
+                    Status = true,
+                    Data = new CategoryDto
+                    {
+                        Name = model.Name,
+                        Description = model.Description,
+                    }
+                };
             }
             catch (Exception ex)
             {

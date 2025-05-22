@@ -46,7 +46,7 @@ namespace E_commerce.Repositories.Implementattions
         public async Task<Product> GetProduct(Expression<Func<Product, bool>> predicate)
         {
             return await _context.Set<Product>()
-                 .Include(a => a.Name)
+                 .Include(a => a.Name)  
                  .Include(a => a.Description)
                  .Include(a => a.Price)
                  .Include(a => a.StockQuantity)
