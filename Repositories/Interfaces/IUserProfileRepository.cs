@@ -4,7 +4,7 @@ namespace E_commerce.Repositories.Interfaces
 {
     public interface IUserProfileRepository :IBaseRepository<UserProfile>
     {
-        Task<UserProfile?> GetProfile (Guid id);
+        Task<UserProfile?> GetProfileByIdAsync (Guid id);
         Task<UserProfile?> GetProfileAsync(Expression<Func<UserProfile, bool>> predicate);
         Task<ICollection<UserProfile?>> GetAll();
     }

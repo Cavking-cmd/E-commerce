@@ -1,4 +1,4 @@
-﻿﻿using System.Linq.Expressions;
+﻿﻿  using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
 using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.Request;
@@ -32,7 +32,7 @@ namespace E_commerce.Services.Implementations
             try
             {
                 var exist = await _vendorRepository.CheckAsync(a => a.Email == model.Email);
-                if (exist == null)
+                if (Validator.CheckDuplicate(exist))
                 {
                     return new BaseResponse<VendorDto>()
                     {
@@ -85,7 +85,7 @@ namespace E_commerce.Services.Implementations
                 {
                     Message = "Vendor has been created succesfully",
                     Status = true,
-                    Data =  new VendorDto
+                    Data = new VendorDto
                     {
                         Id = vendor.Id,
                         BusinessName = vendor.BusinessName,
@@ -108,8 +108,54 @@ namespace E_commerce.Services.Implementations
                         },
                     }
                 };
+            }
+        
 
 
+
+            catch (Exception ex)
+            {
+                return new BaseResponse<VendorDto>
+                {
+                    Message = ex.Message,
+                    Status = false,
+                    Data = null,
+                };
+            }
+        }
+
+        public async Task<BaseResponse<VendorDto>> UpdateVendor(UpdateVendorRequestModel model)
+        {
+            try
+            {
+                var vendor = await _vendorRepository.GetVendorAsync(a => a.Id == model.Id && !a.IsDeleted);
+                if (vendor == null)
+                {
+                    return new BaseResponse<VendorDto>
+                    {
+                        Message = "Vendor not found",
+                        Status = false,
+                        Data = null,
+                    };
+                }
+                vendor.BusinessName = model.BusinessName;
+                vendor.Description = model.Description;
+                vendor.StoreLocation = model.StoreLocation;
+                await _vendorRepository.Update(vendor);
+                await _unitOfWork.SaveChangesAsync();
+                return new BaseResponse<VendorDto>
+                {
+                    Message = "Vendor updated successfully",
+                    Status = true,
+                    Data = new VendorDto
+                    {
+                        Id = vendor.Id,
+                        BusinessName = vendor.BusinessName,
+                        Description = vendor.Description,
+                        Email = vendor.Email,
+                        StoreLocation = vendor.StoreLocation
+                    }
+                };
             }
             catch (Exception ex)
             {
@@ -122,11 +168,46 @@ namespace E_commerce.Services.Implementations
             }
         }
 
+        public async Task<BaseResponse<bool>> DeleteVendor(Guid id)
+        {
+            try
+            {
+                var vendor = await _vendorRepository.GetVendorAsync(a => a.Id == id && !a.IsDeleted);
+                if (vendor == null)
+                {
+                    return new BaseResponse<bool>
+                    {
+                        Message = "Vendor not found",
+                        Status = false,
+                        Data = false,
+                    };
+                }
+                await _vendorRepository.SoftDeleteAsync(vendor);
+                await _unitOfWork.SaveChangesAsync();
+                return new BaseResponse<bool>
+                {
+                    Message = "Vendor deleted successfully",
+                    Status = true,
+                    Data = true,
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<bool>
+                {
+                    Message = ex.Message,
+                    Status = false,
+                    Data = false,
+                };
+            }
+        }
+  
+
         public async Task<BaseResponse<ICollection<VendorDto>>> GetAll()
         {
             try
             {
-                var vendor = await _vendorRepository.GetAllAsync();
+                var vendor = await _vendorRepository.GetAllVendorsAsync();
                 if (vendor == null)
                     return new BaseResponse<ICollection<VendorDto>>
                     {
@@ -181,8 +262,8 @@ namespace E_commerce.Services.Implementations
         {
             try
             {
-                var vendor = await  _vendorRepository.GetAsync(a=> a.Id ==id && a.IsDeleted == false);
-                 if (vendor == null)
+                var vendor = await _vendorRepository.GetVendorAsync(a => a.Id == id && a.IsDeleted == false);
+                if (vendor == null)
                 {
                     return new BaseResponse<VendorDto>
                     {
@@ -219,7 +300,7 @@ namespace E_commerce.Services.Implementations
                     }
                 };
 
-            }
+            } 
             catch (Exception ex)
             {
                 return new BaseResponse<VendorDto>
@@ -231,7 +312,6 @@ namespace E_commerce.Services.Implementations
             }
            
         }
-
       
     }
 }

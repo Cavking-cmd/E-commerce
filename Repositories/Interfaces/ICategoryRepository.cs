@@ -6,8 +6,8 @@ namespace E_commerce.Repositories.Interfaces
 {
     public interface ICategoryRepository: IBaseRepository<Category>
     {
-        Task<Category> Get(Expression<Func<Category, bool>> predicate);
-        Task<Category> GetCategoryById(Guid id);
-        Task<ICollection<Category>> GetAll();
+        Task<Category> GetCategoryAsync(Expression<Func<Category, bool>> predicate);
+        Task<Category> GetCategoryByIdAsync(Guid id);
+        Task<ICollection<Category>> GetAllCategoriesAsync();
     }
 }

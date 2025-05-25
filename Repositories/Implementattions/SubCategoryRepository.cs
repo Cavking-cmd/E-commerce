@@ -15,31 +15,25 @@ namespace E_commerce.Repositories.Implementattions
             _context = context;
         }
 
-        public async Task<SubCategory> Get(Expression<Func<SubCategory, bool>> predicate)
+        public async Task<SubCategory> GetSubCategoryAsync(Expression<Func<SubCategory, bool>> predicate)
         {
             return await _context.Set<SubCategory>()
-                .Include(a=>a.Name)
-                .Include(a=>a.Description)
                 .Include(a=>a.Category)
                 .Include(a=>a.Products)
                 .FirstOrDefaultAsync(predicate);
         }
 
-        public async Task<ICollection<SubCategory>> GetAll()
+        public async Task<ICollection<SubCategory>> GetAllSubCategoriesAsync()
         {
             return await _context.Set<SubCategory>()
-                .Include(a => a.Name)
-                .Include(a => a.Description)
                 .Include(a => a.Category)
                 .Include(a => a.Products)
                .ToListAsync();
         }
 
-        public async  Task<SubCategory> GetById(Guid id)
+        public async  Task<SubCategory> GetSubCategoryByIdAsync(Guid id)
         {
             return await _context.Set<SubCategory>()
-                .Include(a => a.Name)
-                .Include(a => a.Description)
                 .Include(a => a.Category)
                 .Include(a => a.Products)
                 .FirstOrDefaultAsync(a => a.Id == id && a.IsDeleted == false);  

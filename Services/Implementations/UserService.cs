@@ -35,6 +35,34 @@ namespace E_commerce.Services.Implementations
         {
             try
             {
+                if (Validator.CheckNull(loginRequest))
+                {
+                    return new BaseResponse<UserDto>
+                    {
+                        Message = "Login request cannot be null.",
+                        Status = false,
+                        Data = null
+                    };
+                }
+                if (Validator.CheckString(loginRequest.Email))
+                {
+                    return new BaseResponse<UserDto>
+                    {
+                        Message = "Email is required.",
+                        Status = false,
+                        Data = null
+                    };
+                }
+                if (Validator.CheckString(loginRequest.Password))
+                {
+                    return new BaseResponse<UserDto>
+                    {
+                        Message = "Password is required.",
+                        Status = false,
+                        Data = null
+                    };
+                }
+
                 var user = await _userRepository.GetUserAsync(a => a.Email == loginRequest.Email);
                 if (user == null)
                 {
@@ -84,6 +112,34 @@ namespace E_commerce.Services.Implementations
         {
             try
             {
+                if (Validator.CheckString(email))
+                {
+                    return new BaseResponse<UserDto>
+                    {
+                        Message = "Email is required.",
+                        Status = false,
+                        Data = null
+                    };
+                }
+                if (Validator.CheckNull(loginRequest))
+                {
+                    return new BaseResponse<UserDto>
+                    {
+                        Message = "Update request cannot be null.",
+                        Status = false,
+                        Data = null
+                    };
+                }
+                if (Validator.CheckString(loginRequest.Password))
+                {
+                    return new BaseResponse<UserDto>
+                    {
+                        Message = "Password is required.",
+                        Status = false,
+                        Data = null
+                    };
+                }
+
                 var user = await _userRepository.GetUserAsync(a => a.Email == email);
                 if (user == null)
                 {

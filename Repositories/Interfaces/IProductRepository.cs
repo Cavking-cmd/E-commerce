@@ -5,8 +5,8 @@ namespace E_commerce.Repositories.Interfaces
 {
     public interface IProductRepository :IBaseRepository<Product>
     {
-        Task<Product> GetByIdAsync(Guid id);
-        Task<Product> GetProduct(Expression<Func<Product, bool>> predicate);
-        Task<ICollection<Product>> GetAllProducts();
+        Task<Product> GetProductByIdAsync(Guid id);
+        Task<Product> GetProductAsync(Expression<Func<Product, bool>> predicate);
+        Task<ICollection<Product>> GetAllProductsAsync();
     }
 }

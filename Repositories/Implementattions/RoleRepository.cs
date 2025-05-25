@@ -17,9 +17,9 @@ namespace E_commerce.Repositories.Implementattions
 
         public async Task<Role?> GetRoleAsync(string roleName)
         {
-            return  _context.Set<Role>()
+            return await _context.Set<Role>()
                 .Include(a => a.UserRoles)
-                .FirstOrDefault(r => r.Name== roleName);
+                .FirstOrDefaultAsync(r => r.Name== roleName);
         }
 
      

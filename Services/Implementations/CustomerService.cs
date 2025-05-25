@@ -32,8 +32,44 @@ namespace E_commerce.Services.Implementations
         {
             try
             {
+                if (Validator.CheckNull(model))
+                {
+                    return new BaseResponse<CustomerDto>
+                    {
+                        Message = "Customer model cannot be null.",
+                        Status = false,
+                        Data = null,
+                    };
+                }
+                if (Validator.CheckString(model.Email))
+                {
+                    return new BaseResponse<CustomerDto>
+                    {
+                        Message = "Email is required.",
+                        Status = false,
+                        Data = null,
+                    };
+                }
+                if (Validator.CheckString(model.Password))
+                {
+                    return new BaseResponse<CustomerDto>
+                    {
+                        Message = "Password is required.",
+                        Status = false,
+                        Data = null,
+                    };
+                }
+                if (Validator.CheckString(model.UserName))
+                {
+                    return new BaseResponse<CustomerDto>
+                    {
+                        Message = "UserName is required.",
+                        Status = false,
+                        Data = null,
+                    };
+                }
                 var exist = await _customerRepository.CheckAsync(a => a.Email == model.Email);
-                if (exist)
+                if (Validator.CheckDuplicate(exist))
                 {
                     return new BaseResponse<CustomerDto>
                     {
@@ -106,11 +142,9 @@ namespace E_commerce.Services.Implementations
                             PostalCode = userProfile.PostalCode,
                             Country = userProfile.Country
                         },
-
                     }
                 };
             }
-
             catch (Exception ex)
             {
                 return new BaseResponse<CustomerDto>
@@ -120,8 +154,113 @@ namespace E_commerce.Services.Implementations
                     Data = null
                 };
             }
-                
         }
+        
+
+        public async Task<BaseResponse<CustomerDto>> UpdateCustomer(UpdateCustomerRequestModel model)
+        {
+            try
+            {
+                if (Validator.CheckNull(model))
+                {
+                    return new BaseResponse<CustomerDto>
+                    {
+                        Message = "Customer model cannot be null.",
+                        Status = false,
+                        Data = null,
+                    };
+                }
+                if (Validator.CheckString(model.Email))
+                {
+                    return new BaseResponse<CustomerDto>
+                    {
+                        Message = "Email is required.",
+                        Status = false,
+                        Data = null,
+                    };
+                }
+                if (Validator.CheckString(model.UserName))
+                {
+                    return new BaseResponse<CustomerDto>
+                    {
+                        Message = "UserName is required.",
+                        Status = false,
+                        Data = null,
+                    };
+                }
+                var customer = await _customerRepository.GetAsync(a => a.Id == model.Id);
+                if (customer == null)
+                {
+                    return new BaseResponse<CustomerDto>
+                    {
+                        Message = "Customer not found.",
+                        Status = false,
+                        Data = null,
+                    };
+                }
+                var userProfile = await _userProfileRepository.GetProfileAsync(a => a.Id == model.ProfileId);
+                if (userProfile == null)
+                {
+                    return new BaseResponse<CustomerDto>
+                    {
+                        Message = "User profile not found.",
+                        Status = false,
+                        Data = null,
+                    };
+                }
+                customer.Email = model.Email;
+                customer.UserName = model.UserName;
+                userProfile.FirstName = model.FirstName;
+                userProfile.LastName = model.LastName;
+                userProfile.PhoneNumber = model.PhoneNumber;
+                userProfile.Email = model.Email;
+                userProfile.AddressLine = model.AddressLine;
+                userProfile.City = model.City;
+                userProfile.State = model.State;
+                userProfile.PostalCode = model.PostalCode;
+                userProfile.Country = model.Country;
+
+                await _userProfileRepository.Update(userProfile);
+                await _customerRepository.Update(customer);
+                await _unitOfWork.SaveChangesAsync();
+
+                return new BaseResponse<CustomerDto>
+                {
+                    Message = "Customer updated successfully.",
+                    Status = true,
+                    Data = new CustomerDto
+                    {
+                        Id = customer.Id,
+                        Email = customer.Email,
+                        UserName = customer.UserName,
+                        UserProfile = new UserProfileDto
+                        {
+                            Id = userProfile.Id,
+                            UserId = userProfile.UserId,
+                            Email = userProfile.Email,
+                            FirstName = userProfile.FirstName,
+                            LastName = userProfile.LastName,
+                            PhoneNumber = userProfile.PhoneNumber,
+                            AddressLine = userProfile.AddressLine,
+                            City = userProfile.City,
+                            State = userProfile.State,
+                            PostalCode = userProfile.PostalCode,
+                            Country = userProfile.Country
+                        }
+                    }
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<CustomerDto>
+                {
+                    Message = ex.Message,
+                    Status = false,
+                    Data = null,
+                };
+            }
+        }
+   
 
         public async Task<BaseResponse<ICollection<CustomerDto>>> GetAllAsync()
         {

@@ -10,5 +10,7 @@ namespace E_commerce.Services.Interfaces
         Task<BaseResponse<VendorDto>> CreateVendor(CreateVendorRequestModel model);
         Task<BaseResponse<VendorDto>> GetAsync(Guid id);
         Task<BaseResponse<ICollection<VendorDto>>> GetAll();
+        Task<BaseResponse<VendorDto>> UpdateVendor(UpdateVendorRequestModel model);
+        Task<BaseResponse<bool>> DeleteVendor(Guid id);
     }
 }

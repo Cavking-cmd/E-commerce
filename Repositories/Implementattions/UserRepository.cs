@@ -27,7 +27,7 @@ namespace E_commerce.Repositories.Implementattions
            return _context.Set<User>()
                  .Include(a => a.UserRoles)
                  .ThenInclude(a => a.Role)
-                 .FirstAsync(a => a.Email == email && a.IsDeleted == false);
+                 .FirstOrDefaultAsync(a => a.Email == email && a.IsDeleted == false);
         }
 
         public Task<User?> GetUserAsync(Expression<Func<User, bool>> predicate)

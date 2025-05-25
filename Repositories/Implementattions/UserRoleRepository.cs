@@ -15,7 +15,7 @@ namespace E_commerce.Repositories.Implementattions
 
         public async Task<UserRole> GetByUserAndRoleIdAsync(Guid userId, Guid roleId)
         {
-            return await _context.UserRoles.FirstOrDefaultAsync(a => a.Id == userId && a.RoleId == roleId);
+            return await _context.UserRoles.FirstOrDefaultAsync(a => a.UserId == userId && a.RoleId == roleId);
         }
 
         public async Task<ICollection<UserRole>> GetByUserIdAsync(Guid userId)

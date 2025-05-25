@@ -5,8 +5,8 @@ namespace E_commerce.Repositories.Interfaces
 {
     public interface ISubCategoryRepository : IBaseRepository<SubCategory>
     {
-        Task<SubCategory> Get(Expression<Func<SubCategory , bool>>predicate);
-        Task<SubCategory> GetById(Guid id);
-        Task<ICollection<SubCategory>> GetAll();
+        Task<SubCategory> GetSubCategoryAsync(Expression<Func<SubCategory , bool>>predicate);
+        Task<SubCategory> GetSubCategoryByIdAsync(Guid id);
+        Task<ICollection<SubCategory>> GetAllSubCategoriesAsync();
     }
 }

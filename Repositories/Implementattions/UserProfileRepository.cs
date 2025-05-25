@@ -21,7 +21,7 @@ namespace E_commerce.Repositories.Implementattions
                 .ToListAsync();
         }
 
-        public async Task<UserProfile?> GetProfile(Guid id)
+        public async Task<UserProfile?> GetProfileByIdAsync(Guid id)
         {
             return await _context.Set<UserProfile?>()
                 .FirstOrDefaultAsync(a => a.Id == id && a.IsDeleted == false);

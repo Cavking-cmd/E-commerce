@@ -1,4 +1,5 @@
-﻿using E_commerce.Core.Dtos;
+﻿﻿using System.Linq.Expressions;
+using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.Request;
 using E_commerce.Core.Entities;
 using E_commerce.Repositories.Interfaces;
@@ -11,11 +12,28 @@ namespace E_commerce.Services.Implementations
         private readonly IProductRepository _productRepository;
         private readonly ISubCategoryRepository _subCategoryRepository;
         private readonly IUnitOfWork _unitOfWork;
+
+        public ProductService(IProductRepository productRepository, ISubCategoryRepository subCategoryRepository, IUnitOfWork unitOfWork)
+        {
+            _productRepository = productRepository;
+            _subCategoryRepository = subCategoryRepository;
+            _unitOfWork = unitOfWork;
+        }
+
         public async Task<BaseResponse<ProductDto>> CreateProduct(CreateProductRequestModel model)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(model.Name))
+                if (Validator.CheckNull(model))
+                {
+                    return new BaseResponse<ProductDto>
+                    {
+                        Message = "Product model cannot be null.",
+                        Status = false,
+                        Data = null
+                    };
+                }
+                if (Validator.CheckString(model.Name))
                 {
                     return new BaseResponse<ProductDto>
                     {
@@ -24,27 +42,27 @@ namespace E_commerce.Services.Implementations
                         Data = null
                     };
                 }
-                if (model.Price < 0)
+                if (Validator.CheckNegativeOrZero(model.Price))
                 {
                     return new BaseResponse<ProductDto>
                     {
-                        Message = "Price cannot be negative.",
+                        Message = "Price cannot be negative or zero.",
                         Status = false,
                         Data = null
                     };
                 }
-                if (model.StockQuantity < 0)
+                if (Validator.CheckNegativeOrZero(model.StockQuantity))
                 {
                     return new BaseResponse<ProductDto>
                     {
-                        Message = "Stock quantity cannot be negative.",
+                        Message = "Stock quantity cannot be negative or zero.",
                         Status = false,
                         Data = null
                     };
                 }
 
-                var subCategory = await _subCategoryRepository.CheckAsync(a => a.Id == model.SubCategoryId);
-                if (!subCategory)
+                var subCategoryExists = await _subCategoryRepository.CheckAsync(a => a.Id == model.SubCategoryId);
+                if (!subCategoryExists)
                 {
                     return new BaseResponse<ProductDto>
                     {
@@ -55,7 +73,7 @@ namespace E_commerce.Services.Implementations
                 }
 
                 var exist = await _productRepository.CheckAsync(a => a.Name == model.Name && a.SubCategoryId == model.SubCategoryId);
-                if (exist)
+                if (Validator.CheckDuplicate(exist))
                 {
                     return new BaseResponse<ProductDto>
                     {
@@ -96,7 +114,6 @@ namespace E_commerce.Services.Implementations
             }
             catch (Exception ex)
             {
-                // Log the exception (use your logging framework)
                 return new BaseResponse<ProductDto>
                 {
                     Message = ex.Message,
@@ -108,18 +125,18 @@ namespace E_commerce.Services.Implementations
 
         public async Task<BaseResponse<ICollection<ProductDto>>> GetAll()
         {
-            var product = await _productRepository.GetAllProducts();
-            if (product == null)
+            var products = await _productRepository.GetAllProductsAsync();
+            if (products == null)
             {
                 return new BaseResponse<ICollection<ProductDto>>
                 {
-                    Message = "Product not found",
+                    Message = "Products not found",
                     Status = false,
                     Data = null
                 };
             }
 
-            var listOfProduct = product.Select(a => new ProductDto
+            var listOfProducts = products.Select(a => new ProductDto
             {
                 Id = a.Id,
                 Name = a.Name,
@@ -134,7 +151,7 @@ namespace E_commerce.Services.Implementations
             {
                 Message = "Products found",
                 Status = true,
-                Data = listOfProduct
+                Data = listOfProducts
             };
         }
 
@@ -142,19 +159,19 @@ namespace E_commerce.Services.Implementations
         {
             try
             {
-                var product = await _productRepository.GetProduct(a => a.Id == id && a.IsDeleted == false);
+                var product = await _productRepository.GetProductAsync(a => a.Id == id && a.IsDeleted == false);
                 if (product == null)
                 {
                     return new BaseResponse<ProductDto>
                     {
-                        Message = $"Product with {id} was not found ",
+                        Message = $"Product with {id} was not found",
                         Status = false,
                         Data = null
                     };
                 }
                 return new BaseResponse<ProductDto>
                 {
-                    Message = $"Product with {id} was not found ",
+                    Message = $"Product with {id} was found",
                     Status = true,
                     Data = new ProductDto
                     {
@@ -172,58 +189,91 @@ namespace E_commerce.Services.Implementations
             {
                 return new BaseResponse<ProductDto>
                 {
-                    Message = "An error occurred while search for  the product. Please try again.",
+                    Message = "An error occurred while searching for the product. Please try again.",
                     Status = false,
                     Data = null
                 };
             }
-    }
+        }
 
         public async Task<BaseResponse<ProductDto>> UpdateProduct(string productName, UpdateProductModel model)
         {
-            try 
+            try
             {
-                var product = await _productRepository.GetProduct(a=>a.Name == productName && !a.IsDeleted);
-                if(product == null)
+                var product = await _productRepository.GetProductAsync(a => a.Name == productName && !a.IsDeleted);
+                if (product == null)
                 {
                     return new BaseResponse<ProductDto>
                     {
-                        Message="Product Name not found",
+                        Message = "Product Name not found",
                         Status = false,
                         Data = null
                     };
                 }
-                product.Name =(model.Name);
-                product.Description =(model.Description);
-                product.Price =(model.Price);
-                product.StockQuantity =(model.StockQuantity);
-                product.ImageUrl =(model.ImageUrl);
+                product.Name = model.Name;
+                product.Description = model.Description;
+                product.Price = model.Price;
+                product.StockQuantity = model.StockQuantity;
+                product.ImageUrl = model.ImageUrl;
                 await _productRepository.Update(product);
                 return new BaseResponse<ProductDto>
                 {
-                    Message="Product has been updated successfully",
+                    Message = "Product has been updated successfully",
                     Status = true,
-                    Data= new ProductDto
+                    Data = new ProductDto
                     {
                         Name = product.Name,
                         Description = product.Description,
-                        Price=product.Price,
-                        StockQuantity=product.StockQuantity,
+                        Price = product.Price,
+                        StockQuantity = product.StockQuantity,
                         ImageUrl = product.ImageUrl,
                     }
-
                 };
-
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 return new BaseResponse<ProductDto>
                 {
                     Message = ex.Message,
                     Status = false,
-                    Data=null,
+                    Data = null,
+                };
+            }
+        }
+
+        public async Task<BaseResponse<bool>> DeleteProduct(Guid id)
+        {
+            try
+            {
+                var product = await _productRepository.GetProductAsync(a => a.Id == id && !a.IsDeleted);
+                if (product == null)
+                {
+                    return new BaseResponse<bool>
+                    {
+                        Message = "Product not found",
+                        Status = false,
+                        Data = false
+                    };
+                }
+                await _productRepository.SoftDeleteAsync(product);
+                await _unitOfWork.SaveChangesAsync();
+                return new BaseResponse<bool>
+                {
+                    Message = "Product deleted successfully",
+                    Status = true,
+                    Data = true
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<bool>
+                {
+                    Message = ex.Message,
+                    Status = false,
+                    Data = false
                 };
             }
         }
     }
 }
+

@@ -32,7 +32,7 @@ namespace E_commerce.Core.Dtos.Request
     }
     public class UpdateProductModel
     {
-        public readonly Guid Id {  get; set; }
+        public required Guid Id {  get; set; }
         public required string Name { get; set; }
         public string? Description { get; set; }
         public decimal Price { get; set; }

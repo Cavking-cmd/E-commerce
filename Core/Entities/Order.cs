@@ -5,6 +5,7 @@ namespace E_commerce.Core.Entities
     public class Order : BaseEntity
     {
         // Foreignkey for User id
+        public required string Name { get; set; }
         public DateTime OrderDate  { get; set; }
         public decimal TotalPrice  { get; set; }
         // Possible enum for order status

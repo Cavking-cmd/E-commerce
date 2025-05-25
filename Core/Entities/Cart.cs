@@ -2,6 +2,7 @@ namespace E_commerce.Core.Entities
 {
     public class Cart : BaseEntity
     {
+        public required string Name { get; set; }
         public Guid CustomerId { get; set; }
         public Customer? Customer { get; set; }
 

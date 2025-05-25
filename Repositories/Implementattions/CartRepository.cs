@@ -14,7 +14,7 @@ namespace E_commerce.Repositories.Implementattions
             _context = context;
         }
 
-        public async  Task<ICollection<Cart>> GetAllAsync()
+        public async  Task<ICollection<Cart>> GetAllCartsAsync()
         {
             return await _context.Set<Cart>()
                 .Include(a=>a.Customer)
@@ -23,7 +23,7 @@ namespace E_commerce.Repositories.Implementattions
                 .ToListAsync();
         }
 
-        public  async Task<Cart> GetByIdAsync(Guid id)
+        public  async Task<Cart> GetCartByIdAsync(Guid id)
         {
             return await _context.Set<Cart>()
                 .Include(a => a.Customer)
