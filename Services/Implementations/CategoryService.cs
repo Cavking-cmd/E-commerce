@@ -16,6 +16,7 @@ namespace E_commerce.Services.Implementations
 
         public async Task<BaseResponse<CategoryDto>> CreateCategory(CreateCategoryRequestModel model)
         {
+            //qwertyuio;p
             try
             {
                 if (Validator.CheckNull(model))
@@ -67,9 +68,9 @@ namespace E_commerce.Services.Implementations
             {
                 return new BaseResponse<CategoryDto>
                 {
-                    Message= ex.Message,
+                    Message = ex.Message,
                     Status = false,
-                    Data=null
+                    Data = null
                 };
             }
         }
