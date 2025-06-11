@@ -29,9 +29,9 @@
                 return exists;
             }
 
-            public static bool CheckState(bool isValid)
+            public static bool CheckState(bool isDeleted)
             {
-                return !isValid;
+                return !isDeleted;
             }
 
             public static bool CheckOwnership(bool hasOwnership)
