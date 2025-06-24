@@ -74,6 +74,10 @@ namespace E_commerce.Services.Implementations
                 };
             }
         }
+        public async Task<Cart?> GetCartByCustomerIdAsync(Guid customerId)
+        {
+            return await _cartRepository.GetCartByCustomerIdAsync(customerId);
+        }
 
         public async Task<BaseResponse<ICollection<CartDto>>> GetAll()
         {

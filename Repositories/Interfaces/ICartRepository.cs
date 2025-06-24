@@ -8,5 +8,7 @@ namespace E_commerce.Repositories.Interfaces
         Task<Cart> GetCartByIdAsync(Guid id);
         Task<Cart> GetCartAsync(Expression<Func<Cart, bool>>predicate);
         Task<ICollection<Cart>> GetAllCartsAsync();
+        Task<Cart?> GetCartByCustomerIdAsync(Guid customerId);
+
     }
 }

@@ -5,6 +5,7 @@ namespace E_commerce.Core.Dtos.Request
 {
     public class OrderDto
     {
+        public Guid Id { get; set; }
         public required string Name { get; set; }
         public DateTime OrderDate { get; set; }
         public decimal TotalPrice { get; set; }

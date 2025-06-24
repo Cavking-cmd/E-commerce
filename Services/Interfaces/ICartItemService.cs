@@ -10,5 +10,6 @@ namespace E_commerce.Services.Interfaces
         Task<BaseResponse<CartItemDto>> GetAsync(Guid id);
         Task<BaseResponse<CartItemDto>> UpdateCartItem(UpdateCartItemRequestModel model);
         Task<BaseResponse<bool>> DeleteCartItem(Guid id);
+
     }
 }

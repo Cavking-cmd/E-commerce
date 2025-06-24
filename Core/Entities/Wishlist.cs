@@ -5,6 +5,6 @@ namespace E_commerce.Core.Entities
         public Guid CustomerId { get; set; }
         public Customer? Customer { get; set; }
 
-        public ICollection<WishlistItem> WishlistItems { get; set; } = new List<WishlistItem>();
+        public ICollection<WishlistItem> WishlistItems { get; set; } = [];
     }
 }

@@ -8,6 +8,8 @@ namespace E_commerce.Core.Dtos.Request
         public decimal PriceAtPurchase { get; set; }
         public Guid OrderId { get; set; }
         public OrderDto? Order { get; set; }
+        public Guid ProductId { get; internal set; }
+        public string ProductName { get; internal set; }
     }
     public class CreateOrderItemRequestModel
     {

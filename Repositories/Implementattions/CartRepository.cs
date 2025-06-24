@@ -40,5 +40,14 @@ namespace E_commerce.Repositories.Implementattions
                 .Include(a => a.Coupons)
                 .FirstOrDefaultAsync(predicate);
         }
+        public async Task<Cart?> GetCartByCustomerIdAsync(Guid customerId)
+        {
+            return await _context.Carts
+                .Include(c => c.CartItems)
+                    .ThenInclude(ci => ci.Product)
+                .Include(c => c.Coupons)
+                .FirstOrDefaultAsync(c => c.CustomerId == customerId);
+        }
+
     }
 }
