@@ -14,6 +14,7 @@ namespace E_commerce.Core.Dtos.Request
         public CustomerDto? Customer { get; set; }
         public ICollection<OrderItemDto> OrderItems { get; set; } = [];
         public ICollection<CouponDto> Coupons { get; set; } = [];
+        public string? PaymentUrl { get; set; }
 
     }
     public class CreateOrderRequestModel

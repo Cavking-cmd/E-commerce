@@ -6,6 +6,7 @@ namespace E_commerce.Core.Dtos
 {
     public class CouponDto
     {
+        public Guid Id { get; set; }
         public required string Code { get; set; }
         public decimal DiscountPercentage { get; set; }
         public DateTime ValidFrom { get; set; }
@@ -15,7 +16,7 @@ namespace E_commerce.Core.Dtos
         // Manny to Many Relationship with Order 
         public ICollection<OrderDto> Orders { get; set; } = [];
     }
-    public class CreateCuponRequestModel
+    public class CreateCouponRequestModel
     {
         public required string Code { get; set; }
         public decimal DiscountPercentage { get; set; }
