@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Orders - E-commerce</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-blue-600">E-commerce</h1>
+    <nav>
+      <a href="index.html" class="mr-4 hover:text-blue-800">Home</a>
+      <a href="cart.html" class="mr-4 hover:text-blue-800">Cart</a>
+      <a href="wishlist.html" class="mr-4 hover:text-blue-800">Wishlist</a>
+      <a href="orders.html" class="mr-4 text-blue-800 font-semibold">Orders</a>
+      <a href="login.html" class="hover:text-blue-800">Login</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-grow container mx-auto p-4 max-w-5xl">
+    <h2 class="text-xl font-semibold mb-4">Your Orders</h2>
+    <div id="orders-list" class="bg-white p-6 rounded shadow space-y-4">
+      <p class="text-gray-500">Loading orders...</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow p-4 text-center text-gray-600">
+    &copy; 2024 E-commerce
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const API_BASE_URL = 'http://localhost:5000/api';
+
+    function getAuthToken() {
+      return localStorage.getItem('authToken');
+    }
+
+    async function fetchOrders() {
+      const token = getAuthToken();
+      if (!token) {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      try {
+        const response = await fetch(`${API_BASE_URL}/orders`, {
+          headers: {
+            'Authorization': 'Bearer ' + token
+          }
+        });
+
+        if (!response.ok) throw new Error('Failed to fetch orders');
+        const orders = await response.json();
+        displayOrders(orders);
+      } catch (error) {
+        console.error(error);
+        document.getElementById('orders-list').innerHTML =
+          '<p class="text-red-600">Failed to load orders.</p>';
+      }
+    }
+
+    function displayOrders(orders) {
+      const container = document.getElementById('orders-list');
+      container.innerHTML = '';
+
+      if (!Array.isArray(orders) || orders.length === 0) {
+        container.innerHTML = '<p class="text-gray-600">You have no orders.</p>';
+        return;
+      }
+
+      orders.forEach(order => {
+        const orderDiv = document.createElement('div');
+        orderDiv.className = 'border border-gray-300 rounded p-4';
+        orderDiv.innerHTML = `
+          <p><strong>Order ID:</strong> ${order.id}</p>
+          <p><strong>Status:</strong> ${order.status}</p>
+          <p><strong>Total:</strong> $${order.total?.toFixed(2) || '0.00'}</p>
+          <p><strong>Created At:</strong> ${new Date(order.createdAt).toLocaleString()}</p>
+          <button 
+            data-id="${order.id}" 
+            class="mt-2 bg-red-600 text-white py-1 px-3 rounded hover:bg-red-700 cancel-order-btn"
+            ${order.status.toLowerCase() !== 'pending' ? 'disabled class="opacity-50 cursor-not-allowed"' : ''}
+          >
+            Cancel Order
+          </button>
+        `;
+        container.appendChild(orderDiv);
+      });
+
+      addCancelOrderListeners();
+    }
+
+    function addCancelOrderListeners() {
+      document.querySelectorAll('.cancel-order-btn').forEach(button => {
+        button.addEventListener('click', async (e) => {
+          const orderId = e.target.getAttribute('data-id');
+          if (orderId && confirm('Are you sure you want to cancel this order?')) {
+            await cancelOrder(orderId);
+          }
+        });
+      });
+    }
+
+    async function cancelOrder(orderId) {
+      const token = getAuthToken();
+      if (!token) {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      try {
+        const response = await fetch(`${API_BASE_URL}/orders/${orderId}/cancel`, {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + token
+          }
+        });
+
+        if (!response.ok) throw new Error('Failed to cancel order');
+        fetchOrders(); // Refresh list
+      } catch (error) {
+        console.error(error);
+        alert('Error cancelling order.');
+      }
+    }
+
+    // Initial load
+    fetchOrders();
+  </script>
+
+</body>
+</html>

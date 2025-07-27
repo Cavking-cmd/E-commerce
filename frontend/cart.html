@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shopping Cart - E-commerce</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-blue-600">E-commerce</h1>
+    <nav>
+      <a href="index.html" class="mr-4 hover:text-blue-800">Home</a>
+      <a href="cart.html" class="mr-4 hover:text-blue-800 font-semibold">Cart</a>
+      <a href="wishlist.html" class="mr-4 hover:text-blue-800">Wishlist</a>
+      <a href="orders.html" class="mr-4 hover:text-blue-800">Orders</a>
+      <a href="login.html" class="hover:text-blue-800">Login</a>
+    </nav>
+  </header>
+
+  <main class="flex-grow container mx-auto p-4 max-w-4xl">
+    <h2 class="text-xl font-semibold mb-4">Shopping Cart</h2>
+    <div id="cart-items" class="bg-white p-6 rounded shadow space-y-4">
+      <!-- Cart items will be loaded here -->
+    </div>
+    <div id="cart-summary" class="mt-4 text-right font-bold text-lg"></div>
+  </main>
+
+  <footer class="bg-white shadow p-4 text-center text-gray-600">
+    &copy; 2024 E-commerce
+  </footer>
+
+  <script>
+    const API_BASE_URL = 'http://localhost:5000/api';
+
+    function getAuthToken() {
+      return localStorage.getItem('authToken');
+    }
+
+    async function fetchCartItems() {
+      const token = getAuthToken();
+      if (!token) return window.location.href = 'login.html';
+      try {
+        const response = await fetch(`${API_BASE_URL}/cart/items`, {
+          headers: { 'Authorization': 'Bearer ' + token }
+        });
+        if (!response.ok) throw new Error('Failed to fetch cart items');
+        const cartItems = await response.json();
+        displayCartItems(cartItems);
+      } catch (error) {
+        console.error(error);
+        document.getElementById('cart-items').innerHTML = '<p class="text-red-600">Failed to load cart items.</p>';
+      }
+    }
+
+    function displayCartItems(items) {
+      const container = document.getElementById('cart-items');
+      container.innerHTML = '';
+      let total = 0;
+
+      if (items.length === 0) {
+        container.innerHTML = '<p class="text-gray-600">Your cart is empty.</p>';
+        document.getElementById('cart-summary').textContent = '';
+        return;
+      }
+
+      items.forEach(item => {
+        total += item.price * item.quantity;
+
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'flex justify-between items-center border-b border-gray-200 pb-4';
+
+        itemDiv.innerHTML = `
+          <div>
+            <p class="font-semibold">${item.productName}</p>
+            <p class="text-sm text-gray-600">Price: $${item.price.toFixed(2)}</p>
+            <div class="text-sm text-gray-600 mt-1 flex items-center space-x-2">
+              <span>Quantity:</span>
+              <button data-id="${item.id}" data-action="decrease" class="px-2 py-1 bg-gray-300 rounded hover:bg-gray-400">-</button>
+              <span>${item.quantity}</span>
+              <button data-id="${item.id}" data-action="increase" class="px-2 py-1 bg-gray-300 rounded hover:bg-gray-400">+</button>
+            </div>
+          </div>
+          <button data-id="${item.id}" class="text-red-600 hover:underline">Remove</button>
+        `;
+
+        container.appendChild(itemDiv);
+      });
+
+      document.getElementById('cart-summary').textContent = `Total: $${total.toFixed(2)}`;
+      addCartEventListeners();
+    }
+
+    function addCartEventListeners() {
+      document.querySelectorAll('#cart-items button[data-action]').forEach(button => {
+        button.addEventListener('click', async e => {
+          const id = e.target.getAttribute('data-id');
+          const action = e.target.getAttribute('data-action');
+          const change = action === 'increase' ? 1 : -1;
+          await updateCartItemQuantity(id, change);
+        });
+      });
+
+      document.querySelectorAll('#cart-items button.text-red-600').forEach(button => {
+        button.addEventListener('click', async e => {
+          const id = e.target.getAttribute('data-id');
+          await removeCartItem(id);
+        });
+      });
+    }
+
+    async function updateCartItemQuantity(itemId, change) {
+      const token = getAuthToken();
+      if (!token) return window.location.href = 'login.html';
+
+      try {
+        const response = await fetch(`${API_BASE_URL}/cart/items/${itemId}`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+          },
+          body: JSON.stringify({ quantityChange: change })
+        });
+
+        if (!response.ok) throw new Error('Failed to update cart item');
+        fetchCartItems();
+      } catch (error) {
+        console.error(error);
+        alert('Error updating cart item.');
+      }
+    }
+
+    async function removeCartItem(itemId) {
+      const token = getAuthToken();
+      if (!token) return window.location.href = 'login.html';
+
+      try {
+        const response = await fetch(`${API_BASE_URL}/cart/items/${itemId}`, {
+          method: 'DELETE',
+          headers: { 'Authorization': 'Bearer ' + token }
+        });
+
+        if (!response.ok) throw new Error('Failed to remove cart item');
+        fetchCartItems();
+      } catch (error) {
+        console.error(error);
+        alert('Error removing cart item.');
+      }
+    }
+
+    fetchCartItems();
+  </script>
+
+</body>
+</html>
+
