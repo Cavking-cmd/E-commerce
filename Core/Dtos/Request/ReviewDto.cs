@@ -7,6 +7,7 @@ namespace E_commerce.Core.Dtos.Request
     {
         public Guid Id { get; set; }
         public Guid ProductId { get; set; }
+        //public Guid UserId { get; set; }
         public ProductDto? Product { get; set; }
         [Range(1, 5)]
         public int Rating { get; set; }

@@ -1,7 +1,6 @@
-﻿using E_commerce.Core.Dtos;
+﻿﻿using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.Request;
 using E_commerce.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace E_commerce.Controllers

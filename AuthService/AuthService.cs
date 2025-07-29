@@ -2,9 +2,9 @@
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using E_commerce.Core.Entities;
-using Microsoft.AspNetCore.Identity;
 using E_commerce.Repositories.Interfaces;
 
 namespace E_commerce.AuthService
@@ -12,30 +12,24 @@ namespace E_commerce.AuthService
     public class AuthService : IAuthService
     {
         private readonly IConfiguration _config;
-        private readonly IUserRepository _userRepository; // Assume this handles DB access
-        private readonly IPasswordHasher<User> _passwordHasher;
+        private readonly IUserRepository _userRepository;
 
-        public AuthService(IConfiguration config, IUserRepository userRepository, IPasswordHasher<User> passwordHasher)
+        public AuthService(IConfiguration config, IUserRepository userRepository)
         {
             _config = config;
             _userRepository = userRepository;
-            _passwordHasher = passwordHasher;
         }
 
-        // ✅ This method handles both authentication and token generation
         public async Task<string> AuthenticateAndGenerateTokenAsync(LoginRequestModel loginDto)
         {
-            // Step 1: Find user by email
             var user = await _userRepository.GetUserByEmailAsync(loginDto.Email);
             if (user == null)
                 return null;
 
-            // Step 2: Verify password
-            var result = _passwordHasher.VerifyHashedPassword(user, user.Password, loginDto.Password);
-            if (result != PasswordVerificationResult.Success)
+            var hashedInput = HashPassword(loginDto.Password);
+            if (user.Password != hashedInput)
                 return null;
 
-            // Step 3: Generate token if authentication passes
             var userDto = new UserDto
             {
                 Id = user.Id,
@@ -46,7 +40,14 @@ namespace E_commerce.AuthService
             return GenerateToken(userDto);
         }
 
-        // 🔐 This part generates the JWT (no changes here)
+        private string HashPassword(string password)
+        {
+            using var sha = SHA256.Create();
+            var bytes = Encoding.UTF8.GetBytes(password);
+            var hash = sha.ComputeHash(bytes);
+            return Convert.ToBase64String(hash);
+        }
+
         public string GenerateToken(UserDto userDto)
         {
             var jwt = _config.GetSection("Jwt");

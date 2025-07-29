@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace E_commerce.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/controller")] // controllerv to auth
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace E_commerce.Controllers
             _userService = userService;
             _authService = authService;
         }
-        //[Authorize]
+        [Authorize]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestModel model)
         {

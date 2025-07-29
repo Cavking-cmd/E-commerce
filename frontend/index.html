@@ -31,22 +31,21 @@
   </footer>
 
   <script>
-    const API_BASE_URL = 'http://localhost:5000/api'; // Change to match your backend
+    const API_BASE_URL = 'https://localhost:7180/api'; // Updated to match backend swagger URL
 
     // Fetch and display products
     async function fetchProducts() {
       try {
-        const response = await fetch(`${API_BASE_URL}/products`);
+        const response = await fetch(`${API_BASE_URL}/product`);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const products = await response.json();
-        displayProducts(products);
+        const productsResponse = await response.json();
+        displayProducts(productsResponse.data);
       } catch (error) {
         console.error('Error fetching products:', error);
         document.getElementById('product-list').innerHTML =
           '<p class="text-red-600">Failed to load products. Please try again later.</p>';
       }
     }
-
     // Render product cards
     function displayProducts(products) {
       const container = document.getElementById('product-list');

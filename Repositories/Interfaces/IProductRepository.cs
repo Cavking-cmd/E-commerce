@@ -8,5 +8,7 @@ namespace E_commerce.Repositories.Interfaces
         Task<Product> GetProductByIdAsync(Guid id);
         Task<Product> GetProductAsync(Expression<Func<Product, bool>> predicate);
         Task<ICollection<Product>> GetAllProductsAsync();
+
+        Task<ICollection<Product>> SearchByTagAsync(string tag);
     }
 }

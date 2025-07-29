@@ -27,7 +27,7 @@ namespace E_commerce.Services.Implementations
             _paymentService = paymentService;
         }
 
-        public async Task<BaseResponse<OrderDto>> CreateOrderAsync(Guid customerId)
+        public async Task<BaseResponse<OrderDto>> CreateOrderAsync(CreateOrderRequestModel model ,Guid customerId)
         {
             try
             {

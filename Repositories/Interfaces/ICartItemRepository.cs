@@ -1,4 +1,4 @@
-﻿using E_commerce.Core.Entities;
+﻿﻿using E_commerce.Core.Entities;
 
 namespace E_commerce.Repositories.Interfaces
 {
@@ -8,6 +8,6 @@ namespace E_commerce.Repositories.Interfaces
         Task<ICollection<CartItem>> GetAllCartItemsAsync();
         Task<CartItem> GetByCartAndProductID(Guid cartId, Guid productId);
         Task <CartItem> ClearCartAsync(Guid cartId);
-        
+        Task<ICollection<CartItem>> GetCartItemsByUserIdAsync(Guid userId);
     }
 }

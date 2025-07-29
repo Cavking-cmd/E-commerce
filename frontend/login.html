@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -32,7 +32,7 @@
   </div>
 
   <script>
-    const API_BASE_URL = 'http://localhost:5000/api';
+    const API_BASE_URL = 'https://localhost:7180/api';
 
     const form = document.getElementById('login-form');
     const loginBtn = document.getElementById('login-btn');
@@ -50,7 +50,7 @@
       loginBtn.disabled = true;
 
       try {
-        const response = await fetch(`${API_BASE_URL}/auth/login`, {
+        const response = await fetch(`${API_BASE_URL}/user/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password })

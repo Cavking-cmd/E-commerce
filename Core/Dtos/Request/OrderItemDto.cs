@@ -13,6 +13,8 @@ namespace E_commerce.Core.Dtos.Request
     }
     public class CreateOrderItemRequestModel
     {
+        public Guid UserId { get; set; }
+        public Guid OrderId { get; set; }
         public int Quantity { get; set; }
         public decimal PriceAtPurchase { get; set; }
     }

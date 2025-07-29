@@ -1,4 +1,4 @@
-﻿﻿using System.Linq.Expressions;
+﻿﻿﻿﻿using System.Linq.Expressions;
 using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.Request;
 using E_commerce.Core.Entities;
@@ -274,6 +274,68 @@ namespace E_commerce.Services.Implementations
                 };
             }
         }
+
+        public async Task<BaseResponse<ICollection<ProductDto>>> SearchProductsByTagAsync(string tag)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(tag))
+                {
+                    return new BaseResponse<ICollection<ProductDto>>
+                    {
+                        Message = "Search tag cannot be empty.",
+                        Status = false,
+                        Data = null
+                    };
+                }
+
+                var allProducts = await _productRepository.GetAllProductsAsync();
+
+                var filteredProducts = allProducts
+                    .Where(p => !p.IsDeleted &&
+                                !string.IsNullOrEmpty(p.Tags) &&
+                                p.Tags.Split(',', StringSplitOptions.RemoveEmptyEntries)
+                                      .Any(t => t.Trim().ToLower().Contains(tag.Trim().ToLower())))
+                    .Select(p => new ProductDto
+                    {
+                        Id = p.Id,
+                        Name = p.Name,
+                        Description = p.Description,
+                        Price = p.Price,
+                        StockQuantity = p.StockQuantity,
+                        ImageUrl = p.ImageUrl,
+                        SubCategoryId = p.SubCategoryId,
+                    })
+                    .ToList();
+
+                if (!filteredProducts.Any())
+                {
+                    return new BaseResponse<ICollection<ProductDto>>
+                    {
+                        Message = $"No products found for tag: '{tag}'",
+                        Status = false,
+                        Data = null
+                    };
+                }
+
+                return new BaseResponse<ICollection<ProductDto>>
+                {
+                    Message = $"{filteredProducts.Count} product(s) found with tag: '{tag}'",
+                    Status = true,
+                    Data = filteredProducts
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<ICollection<ProductDto>>
+                {
+                    Message = $"An error occurred during search: {ex.Message}",
+                    Status = false,
+                    Data = null
+                };
+            }
+        }
+
     }
 }
 

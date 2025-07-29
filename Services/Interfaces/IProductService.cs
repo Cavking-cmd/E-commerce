@@ -11,5 +11,7 @@ namespace E_commerce.Services.Interfaces
         Task<BaseResponse<ProductDto>> GetAsync(Guid id);
         Task<BaseResponse<ProductDto>> UpdateProduct(string productName ,UpdateProductModel model);
         Task<BaseResponse<bool>> DeleteProduct(Guid id);
+
+        Task<BaseResponse<ICollection<ProductDto>>> SearchProductsByTagAsync(string tag);
     }
 }

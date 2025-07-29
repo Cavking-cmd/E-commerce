@@ -9,77 +9,66 @@
 <body class="bg-gray-100 min-h-screen flex flex-col">
 
   <header class="bg-white shadow p-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-blue-600">E-commerce</h1>
+    <h1 class="text-2xl font-bold text-blue-600">User Profile</h1>
     <nav>
       <a href="index.html" class="mr-4 hover:text-blue-800">Home</a>
       <a href="cart.html" class="mr-4 hover:text-blue-800">Cart</a>
       <a href="wishlist.html" class="mr-4 hover:text-blue-800">Wishlist</a>
       <a href="orders.html" class="mr-4 hover:text-blue-800">Orders</a>
-      <a href="#" class="hover:text-blue-800" id="logout-link">Logout</a>
+      <a href="login.html" class="hover:text-blue-800">Login</a>
     </nav>
   </header>
 
-  <main class="flex-grow container mx-auto p-4 max-w-lg">
-    <h2 class="text-xl font-semibold mb-4">User Profile</h2>
-    <div id="profile-info" class="bg-white p-6 rounded shadow space-y-2">
-      <p><strong>Name:</strong> <span id="name"></span></p>
-      <p><strong>Email:</strong> <span id="email"></span></p>
-      <p><strong>Phone:</strong> <span id="phone"></span></p>
-      <p><strong>Address:</strong> <span id="address"></span></p>
+  <main class="flex-grow container mx-auto p-4 max-w-md">
+    <h2 class="text-xl font-semibold mb-4">Profile Details</h2>
+    <div id="profile-info" class="bg-white rounded shadow p-4">
+      <!-- Profile details will be loaded here -->
     </div>
   </main>
 
   <footer class="bg-white shadow p-4 text-center text-gray-600">
-    &copy; 2024 E-commerce
+    &copy; <span id="year"></span> E-commerce
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const API_BASE_URL = 'http://localhost:5000/api';
+    const API_BASE_URL = 'https://localhost:7180/api';
+    const authToken = localStorage.getItem('authToken');
 
-      function getAuthToken() {
-        return localStorage.getItem('authToken');
-      }
-
-      async function fetchUserProfile() {
-        const token = getAuthToken();
-        if (!token) {
-          window.location.href = 'login.html';
-          return;
-        }
-
-        try {
-          const response = await fetch(`${API_BASE_URL}/user/profile`, {
-            headers: {
-              'Authorization': 'Bearer ' + token
-            }
-          });
-
-          if (!response.ok) throw new Error('Failed to fetch profile');
-
-          const profile = await response.json();
-
-          document.getElementById('name').textContent = profile.name || '';
-          document.getElementById('email').textContent = profile.email || '';
-          document.getElementById('phone').textContent = profile.phone || '';
-          document.getElementById('address').textContent = profile.address || '';
-
-        } catch (error) {
-          console.error(error);
-          alert('Error loading profile. Please login again.');
-          localStorage.removeItem('authToken');
-          window.location.href = 'login.html';
-        }
-      }
-
-      document.getElementById('logout-link').addEventListener('click', (e) => {
-        e.preventDefault();
-        localStorage.removeItem('authToken');
+    async function fetchUserProfile() {
+      if (!authToken) {
         window.location.href = 'login.html';
-      });
+        return;
+      }
 
-      fetchUserProfile();
-    });
+      try {
+        const response = await fetch(`${API_BASE_URL}/user`, {
+          headers: {
+            'Authorization': `Bearer ${authToken}`
+          }
+        });
+        if (!response.ok) throw new Error('Failed to fetch profile');
+        const result = await response.json();
+        displayProfile(result.data);
+      } catch (error) {
+        console.error('Error fetching profile:', error);
+        document.getElementById('profile-info').innerHTML =
+          '<p class="text-red-600">Failed to load profile. Please login again.</p>';
+      }
+    }
+
+    function displayProfile(profile) {
+      const container = document.getElementById('profile-info');
+      container.innerHTML = `
+        <p><strong>Name:</strong> ${profile.name || 'N/A'}</p>
+        <p><strong>Email:</strong> ${profile.email || 'N/A'}</p>
+        <p><strong>Phone:</strong> ${profile.phone || 'N/A'}</p>
+        <p><strong>Address:</strong> ${profile.address || 'N/A'}</p>
+      `;
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    fetchUserProfile();
   </script>
 
 </body>

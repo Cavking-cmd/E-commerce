@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Area - E-commerce</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-blue-600">E-commerce Admin</h1>
+    <nav>
+      <a href="index.html" class="mr-4 hover:text-blue-800">Home</a>
+      <a href="admin.html" class="mr-4 text-blue-800 font-semibold">Admin</a>
+      <a href="login.html" class="hover:text-blue-800">Login</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-grow container mx-auto p-4 max-w-6xl">
+    <h2 class="text-xl font-semibold mb-4">Admin Dashboard</h2>
+
+    <section id="user-management" class="mb-8">
+      <h3 class="text-lg font-semibold mb-2">User Management</h3>
+      <div id="users-list" class="bg-white p-4 rounded shadow space-y-2">
+        <p class="text-gray-500">Loading users...</p>
+      </div>
+    </section>
+
+    <section id="product-management" class="mb-8">
+      <h3 class="text-lg font-semibold mb-2">Product Management</h3>
+      <div id="admin-products-list" class="bg-white p-4 rounded shadow space-y-2">
+        <p class="text-gray-500">Loading products...</p>
+      </div>
+    </section>
+
+    <section id="order-management" class="mb-8">
+      <h3 class="text-lg font-semibold mb-2">Order Management</h3>
+      <div id="admin-orders-list" class="bg-white p-4 rounded shadow space-y-2">
+        <p class="text-gray-500">Loading orders...</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow p-4 text-center text-gray-600">
+    &copy; 2024 E-commerce
+  </footer>
+
+  <script>
+    const API_BASE_URL = 'http://localhost:5000/api';
+
+    function getAuthToken() {
+      return localStorage.getItem('authToken');
+    }
+
+    function redirectToLoginIfNoToken() {
+      const token = getAuthToken();
+      if (!token) {
+        window.location.href = 'login.html';
+      }
+      return token;
+    }
+
+    async function fetchData(endpoint, onSuccess, onErrorElementId) {
+      const token = redirectToLoginIfNoToken();
+      if (!token) return;
+
+      try {
+        const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+          headers: { 'Authorization': 'Bearer ' + token }
+        });
+
+        if (!response.ok) throw new Error('Fetch failed');
+        const data = await response.json();
+        onSuccess(data);
+      } catch (error) {
+        console.error(error);
+        document.getElementById(onErrorElementId).innerHTML = `<p class="text-red-600">Failed to load data.</p>`;
+      }
+    }
+
+    function displayUsers(users) {
+      const container = document.getElementById('users-list');
+      container.innerHTML = '';
+      if (!Array.isArray(users) || users.length === 0) {
+        container.innerHTML = '<p class="text-gray-600">No users found.</p>';
+        return;
+      }
+      users.forEach(user => {
+        const userDiv = document.createElement('div');
+        userDiv.className = 'border border-gray-300 rounded p-2 flex justify-between items-center';
+        userDiv.textContent = `${user.name} (${user.email})`;
+        container.appendChild(userDiv);
+      });
+    }
+
+    function displayProducts(products) {
+      const container = document.getElementById('admin-products-list');
+      container.innerHTML = '';
+      if (!Array.isArray(products) || products.length === 0) {
+        container.innerHTML = '<p class="text-gray-600">No products found.</p>';
+        return;
+      }
+      products.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'border border-gray-300 rounded p-2 flex justify-between items-center';
+        productDiv.textContent = `${product.name} - $${parseFloat(product.price).toFixed(2)}`;
+        container.appendChild(productDiv);
+      });
+    }
+
+    function displayOrders(orders) {
+      const container = document.getElementById('admin-orders-list');
+      container.innerHTML = '';
+      if (!Array.isArray(orders) || orders.length === 0) {
+        container.innerHTML = '<p class="text-gray-600">No orders found.</p>';
+        return;
+      }
+      orders.forEach(order => {
+        const orderDiv = document.createElement('div');
+        orderDiv.className = 'border border-gray-300 rounded p-2 flex justify-between items-center';
+        orderDiv.textContent = `Order #${order.id} - Status: ${order.status}`;
+        container.appendChild(orderDiv);
+      });
+    }
+
+    // Load data on page load
+    fetchData('/admin/users', displayUsers, 'users-list');
+    fetchData('/admin/products', displayProducts, 'admin-products-list');
+    fetchData('/admin/orders', displayOrders, 'admin-orders-list');
+  </script>
+
+</body>
+</html>
