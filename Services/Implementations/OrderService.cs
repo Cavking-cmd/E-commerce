@@ -1,4 +1,4 @@
-﻿﻿using E_commerce.Core.Dtos;
+﻿using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.Request;
 using E_commerce.Core.Entities;
 using E_commerce.Core.Entities.Enums;
@@ -15,9 +15,10 @@ namespace E_commerce.Services.Implementations
         private readonly ICartRepository _cartRepository;
         private readonly ICouponService _couponService;
         private readonly IPaymentService _paymentService;
+        private readonly IUserService _userService;
 
         public OrderService(IOrderRepository orderRepository, IUnitOfWork unitOfWork,
-            ICartService cartService, ICartRepository cartRepository, ICouponService couponService, IPaymentService paymentService)
+            ICartService cartService, ICartRepository cartRepository, ICouponService couponService, IPaymentService paymentService, IUserService userService)
         {
             _orderRepository = orderRepository;
             _unitOfWork = unitOfWork;
@@ -25,15 +26,27 @@ namespace E_commerce.Services.Implementations
             _cartRepository = cartRepository;
             _couponService = couponService;
             _paymentService = paymentService;
+            _userService = userService;
         }
 
-        public async Task<BaseResponse<OrderDto>> CreateOrderAsync(CreateOrderRequestModel model ,Guid customerId)
+        public async Task<BaseResponse<OrderDto>> CreateOrderAsync(CreateOrderRequestModel model)
         {
             try
             {
-                var cart = await _cartService.GetCartByCustomerIdAsync(customerId);
+                var currentUser = await _userService.GetCurrentUserAsync();
+                if (currentUser == null)
+                {
+                    return new BaseResponse<OrderDto>
+                    {
+                        Message = "User not authenticated",
+                        Status = false,
+                        Data = null
+                    };
+                }
 
-                if (cart == null || cart.CartItems == null || !cart.CartItems.Any())
+                var cart = await _cartRepository.GetCartAsync(c => c.CustomerId == currentUser.Id);
+
+                if (cart is null)
                 {
                     return new BaseResponse<OrderDto>
                     {
@@ -43,12 +56,13 @@ namespace E_commerce.Services.Implementations
                     };
                 }
 
+
                 var order = new Order
                 {
                     Name = $"ORDER-{DateTime.UtcNow:yyyy-MM-dd-HH-mm}",
                     OrderDate = DateTime.UtcNow,
                     Status = OrderEnum.Pending,
-                    CustomerId = customerId,
+                    CustomerId = currentUser.Id,
                     OrderItems = new List<OrderItem>(),
                     Coupons = new List<Coupon>()
                 };
@@ -60,8 +74,8 @@ namespace E_commerce.Services.Implementations
                     var orderItem = new OrderItem
                     {
                         ProductId = cartItem.ProductId,
-                        ProductName = cartItem.Product?.Name ?? "Unknown",
-                        PriceAtPurchase = cartItem.Product?.Price ?? 0,
+                        ProductName = cartItem.ProductName ,
+                        PriceAtPurchase = cartItem.PricePerUnit ,
                         Quantity = cartItem.Quantity,
                         Order = order
                     };
@@ -95,7 +109,7 @@ namespace E_commerce.Services.Implementations
 
                 cart.CartItems.Clear();
                 cart.Coupons.Clear();
-                await _cartRepository.Update(cart);
+                await _cartRepository.DeleteAsync(cart);
                 await _unitOfWork.SaveChangesAsync();
 
                 var orderDto = new OrderDto
@@ -157,9 +171,20 @@ namespace E_commerce.Services.Implementations
             }
         }
 
-        public async Task<BaseResponse<bool>> CancelOrderAsync(Guid orderId, Guid customerId)
+        public async Task<BaseResponse<bool>> CancelOrderAsync(Guid orderId)
         {
-            var order = await _orderRepository.GetOrderAsync(o => o.Id == orderId && o.CustomerId == customerId);
+            var currentUser = await _userService.GetCurrentUserAsync();
+            if (currentUser == null)
+            {
+                return new BaseResponse<bool>
+                {
+                    Status = false,
+                    Message = "User not authenticated",
+                    Data = false
+                };
+            }
+
+            var order = await _orderRepository.GetOrderAsync(o => o.Id == orderId && o.CustomerId == currentUser.Id);
             if (order == null)
             {
                 return new BaseResponse<bool>
@@ -191,9 +216,15 @@ namespace E_commerce.Services.Implementations
             };
         }
 
-        public async Task<ICollection<BaseResponse<OrderDto>>> GetAllOrdersByCustomerIdAsync(Guid customerId)
+        public async Task<ICollection<BaseResponse<OrderDto>>> GetAllOrdersAsync()
         {
-            var orders = await _orderRepository.GetAllAsync(o => o.CustomerId == customerId);
+            var currentUser = await _userService.GetCurrentUserAsync();
+            if (currentUser == null)
+            {
+                return new List<BaseResponse<OrderDto>>();
+            }
+
+            var orders = await _orderRepository.GetAllAsync(o => o.CustomerId == currentUser.Id);
             return orders.Select(order => new BaseResponse<OrderDto>
             {
                 Message = "Order retrieved successfully",
@@ -227,7 +258,18 @@ namespace E_commerce.Services.Implementations
 
         public async Task<BaseResponse<OrderDto>> GetOrderByIdAsync(Guid id)
         {
-            var order = await _orderRepository.GetOrderAsync(o => o.Id == id);
+            var currentUser = await _userService.GetCurrentUserAsync();
+            if (currentUser == null)
+            {
+                return new BaseResponse<OrderDto>
+                {
+                    Message = "User not authenticated",
+                    Status = false,
+                    Data = null
+                };
+            }
+
+            var order = await _orderRepository.GetOrderAsync(o => o.Id == id && o.CustomerId == currentUser.Id);
             if (order == null)
             {
                 return new BaseResponse<OrderDto>

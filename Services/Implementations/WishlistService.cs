@@ -1,4 +1,5 @@
-﻿using E_commerce.Core.Dtos;
+﻿using System.Net.WebSockets;
+using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.WishlistDtos;
 using E_commerce.Core.Dtos.WishlistItemDtos;
 using E_commerce.Core.Entities;
@@ -11,37 +12,40 @@ namespace E_commerce.Services.Implementations
     {
         private readonly IWishlistRepository _wishlistRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserService _userService;
 
-        public WishlistService(IWishlistRepository wishlistRepository, IUnitOfWork unitOfWork)
+        public WishlistService(IWishlistRepository wishlistRepository, IUnitOfWork unitOfWork, IUserService userService)
         {
             _wishlistRepository = wishlistRepository;
             _unitOfWork = unitOfWork;
+            _userService = userService;
         }
 
-        public async Task<BaseResponse<WishlistDto>> CreateAsync(CreateWishlistRequestModel model)
+        public async Task<BaseResponse<WishlistDto>> CreateAsync()
         {
-            if (model.CustomerId == Guid.Empty)
+            var currentUser = await _userService.GetCurrentUserAsync();
+            if (currentUser == null)
             {
                 return new BaseResponse<WishlistDto>
                 {
-                    Message = "Customer ID is required.",
+                    Message = "User not authenticated",
                     Status = false
                 };
             }
 
-            var existing = await _wishlistRepository.GetWishlistAsync(w => w.CustomerId == model.CustomerId);
+            var existing = await _wishlistRepository.GetWishlistAsync(w => w.CustomerId == currentUser.Id);
             if (existing != null)
             {
                 return new BaseResponse<WishlistDto>
                 {
-                    Message = "Wishlist already exists for this customer.",
+                    Message = "Wishlist already exists for this user.",
                     Status = false
                 };
             }
 
             var wishlist = new Wishlist
             {
-                CustomerId = model.CustomerId,
+                CustomerId = currentUser.Id,
                 WishlistItems = new List<WishlistItem>()
             };
 
@@ -63,17 +67,27 @@ namespace E_commerce.Services.Implementations
 
         public async Task<BaseResponse<WishlistDto>> UpdateAsync(UpdateWishlistRequestModel model)
         {
-            var wishlist = await _wishlistRepository.GetWishlistByIdAsync(model.Id);
-            if (wishlist == null)
+            var currentUser = await _userService.GetCurrentUserAsync();
+            if (currentUser == null)
             {
                 return new BaseResponse<WishlistDto>
                 {
-                    Message = "Wishlist not found.",
+                    Message = "User not authenticated.",
                     Status = false
                 };
             }
 
-            wishlist.CustomerId = model.CustomerId;
+            var wishlist = await _wishlistRepository.GetWishlistByIdAsync(model.Id);
+            if (wishlist == null || wishlist.CustomerId != currentUser.Id)
+            {
+                return new BaseResponse<WishlistDto>
+                {
+                    Message = "Wishlist not found or access denied.",
+                    Status = false
+                };
+            }
+
+            // Note: Typically you won't update CustomerId. So we skip it here.
 
             await _wishlistRepository.Update(wishlist);
             await _unitOfWork.SaveChangesAsync();
@@ -97,12 +111,23 @@ namespace E_commerce.Services.Implementations
 
         public async Task<BaseResponse<bool>> DeleteAsync(Guid id)
         {
-            var wishlist = await _wishlistRepository.GetWishlistByIdAsync(id);
-            if (wishlist == null)
+            var currentUser = await _userService.GetCurrentUserAsync();
+            if (currentUser == null)
             {
                 return new BaseResponse<bool>
                 {
-                    Message = "Wishlist not found.",
+                    Message = "User not authenticated.",
+                    Status = false,
+                    Data = false
+                };
+            }
+
+            var wishlist = await _wishlistRepository.GetWishlistByIdAsync(id);
+            if (wishlist == null || wishlist.CustomerId != currentUser.Id)
+            {
+                return new BaseResponse<bool>
+                {
+                    Message = "Wishlist not found or access denied.",
                     Status = false,
                     Data = false
                 };
@@ -121,12 +146,22 @@ namespace E_commerce.Services.Implementations
 
         public async Task<BaseResponse<WishlistDto>> GetByIdAsync(Guid id)
         {
-            var wishlist = await _wishlistRepository.GetWishlistByIdAsync(id);
-            if (wishlist == null)
+            var currentUser = await _userService.GetCurrentUserAsync();
+            if (currentUser == null)
             {
                 return new BaseResponse<WishlistDto>
                 {
-                    Message = "Wishlist not found.",
+                    Message = "User not authenticated.",
+                    Status = false
+                };
+            }
+
+            var wishlist = await _wishlistRepository.GetWishlistByIdAsync(id);
+            if (wishlist == null || wishlist.CustomerId != currentUser.Id)
+            {
+                return new BaseResponse<WishlistDto>
+                {
+                    Message = "Wishlist not found or access denied.",
                     Status = false
                 };
             }
@@ -150,36 +185,60 @@ namespace E_commerce.Services.Implementations
 
         public async Task<BaseResponse<ICollection<WishlistDto>>> GetAllAsync()
         {
-            var wishlists = await _wishlistRepository.GetAllWishlistsAsync();
-
-            var result = wishlists.Select(w => new WishlistDto
+            var currentUser = await _userService.GetCurrentUserAsync();
+            if (currentUser == null)
             {
-                Id = w.Id,
-                CustomerId = w.CustomerId,
-                WishlistItems = w.WishlistItems.Select(wi => new WishlistItemDto
+                return new BaseResponse<ICollection<WishlistDto>>
                 {
-                    Id = wi.Id,
-                    ProductId = wi.ProductId,
-                }).ToList()
-            }).ToList();
+                    Message = "User not authenticated.",
+                    Status = false,
+                    Data = null
+                };
+            }
+
+            var wishlists = await _wishlistRepository.GetAllWishlistsAsync();
+            var userWishlists = wishlists
+                .Where(w => w.CustomerId == currentUser.Id && !w.IsDeleted)
+                .Select(w => new WishlistDto
+                {
+                    Id = w.Id,
+                    CustomerId = w.CustomerId,
+                    WishlistItems = w.WishlistItems.Select(wi => new WishlistItemDto
+                    {
+                        Id = wi.Id,
+                        ProductId = wi.ProductId,
+                    }).ToList()
+                }).ToList();
 
             return new BaseResponse<ICollection<WishlistDto>>
             {
                 Message = "Wishlists retrieved successfully.",
                 Status = true,
-                Data = result
+                Data = userWishlists
             };
         }
 
-        public async Task<BaseResponse<WishlistDto>> GetByCustomerIdAsync(Guid customerId)
+        public async Task<BaseResponse<WishlistDto>> GetWishlistByCustomerIdAsync()
         {
-            var wishlist = await _wishlistRepository.GetWishlistAsync(w => w.CustomerId == customerId && !w.IsDeleted);
+            var currentUser = await _userService.GetCurrentUserAsync();
+            if (currentUser == null)
+            {
+                return new BaseResponse<WishlistDto>
+                {
+                    Message = "User not authenticated",
+                    Status = false,
+                    Data = null
+                };
+            }
+
+            var wishlist = await _wishlistRepository.GetWishlistAsync(w => w.CustomerId == currentUser.Id && !w.IsDeleted);
             if (wishlist == null)
             {
                 return new BaseResponse<WishlistDto>
                 {
-                    Message = "No wishlist found for this customer.",
-                    Status = false
+                    Message = "Wishlist not found",
+                    Status = false,
+                    Data = null
                 };
             }
 

@@ -1,4 +1,4 @@
-﻿﻿using E_commerce.Core.Dtos;
+using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.UserDtos;
 
 namespace E_commerce.Services.Interfaces
@@ -7,6 +7,7 @@ namespace E_commerce.Services.Interfaces
     {
         Task<BaseResponse<UserDto>>LoginAsync (LoginRequestModel loginRequest);
         Task<bool> DeleteAsync(Guid id );
-        Task<BaseResponse<UserDto>>Update (string email ,LoginRequestModel loginRequest);   
+        Task<BaseResponse<UserDto>>Update (string email , UpdateloginRequest loginRequest);
+        Task<UserDto> GetCurrentUserAsync();
     }
 }

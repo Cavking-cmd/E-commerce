@@ -17,7 +17,11 @@ var builder = WebApplication.CreateBuilder(args);
 // =========================================
 // Add Controllers and CORS
 // =========================================
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+ .AddJsonOptions(options =>
+  {
+      options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+  });
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddCors(options =>
@@ -102,6 +106,7 @@ builder.Services.AddHttpClient<IPaymentService, PaymentService>();
 // =========================================
 // Register Services
 // =========================================
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IVendorService, VendorService>();

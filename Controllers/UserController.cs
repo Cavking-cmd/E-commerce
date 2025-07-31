@@ -18,7 +18,7 @@ namespace E_commerce.Controllers
             _userService = userService;
             _authService = authService;
         }
-        [Authorize]
+        //[Authorize]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestModel model)
         {
@@ -50,7 +50,7 @@ namespace E_commerce.Controllers
         }
         //[Authorize]
         [HttpPut("{email}")]
-        public async Task<IActionResult> Update([FromRoute] string email, [FromBody] LoginRequestModel request)
+        public async Task<IActionResult> Update([FromRoute] string email, [FromBody] UpdateloginRequest request)
         {
             var result = await _userService.Update(email, request);
             if (result.Status)

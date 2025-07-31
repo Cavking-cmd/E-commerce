@@ -34,7 +34,7 @@ namespace E_commerce.AuthService
             {
                 Id = user.Id,
                 Email = user.Email,
-                UserRoles = user.UserRoles
+                UserRoles = user.UserRoles.Select(ur => ur.Role.Name).ToList()
             };
 
             return GenerateToken(userDto);
@@ -59,10 +59,11 @@ namespace E_commerce.AuthService
                 new Claim(ClaimTypes.Email, userDto.Email),
             };
 
-            foreach (var item in userDto.UserRoles)
+            foreach (var role in userDto.UserRoles)
             {
-                claims.Add(new Claim(ClaimTypes.Role, item.Role.Name));
+                claims.Add(new Claim(ClaimTypes.Role, role));
             }
+
 
             var token = new JwtSecurityToken(
                 issuer: jwt["Issuer"],

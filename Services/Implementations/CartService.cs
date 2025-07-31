@@ -1,4 +1,4 @@
-﻿using E_commerce.Core.Dtos;
+using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.Request;
 using E_commerce.Core.Entities;
 using E_commerce.Repositories.Interfaces;
@@ -9,11 +9,14 @@ namespace E_commerce.Services.Implementations
     public class CartService : ICartService
     {
         private readonly ICartRepository _cartRepository;
-        private readonly IUnitOfWork _unitOfWork; 
-        public CartService(ICartRepository cartRepository, IUnitOfWork unitOfWork)
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserService _userService;
+
+        public CartService(ICartRepository cartRepository, IUnitOfWork unitOfWork, IUserService userService)
         {
             _cartRepository = cartRepository;
             _unitOfWork = unitOfWork;
+            _userService = userService;
         }
         public async Task<BaseResponse<CartDto>> CreateCart(CreateCartRequestModel model)
         {
@@ -74,11 +77,59 @@ namespace E_commerce.Services.Implementations
                 };
             }
         }
-        public async Task<Cart?> GetCartByCustomerIdAsync(Guid customerId)
+        public async Task<BaseResponse<CartDto>> GetCartByCustomerIdAsync()
         {
-            return await _cartRepository.GetCartByCustomerIdAsync(customerId);
-        }
+            var currentUser = await _userService.GetCurrentUserAsync();
+            if (currentUser == null)
+            {
+                return new BaseResponse<CartDto>
+                {
+                    Message = "User not authenticated",
+                    Status = false,
+                    Data = null
+                };
+            }
 
+            var cart = await _cartRepository.GetCartAsync(c => c.CustomerId == currentUser.Id);
+            if (cart == null)
+            {
+                return new BaseResponse<CartDto>
+                {
+                    Message = "Cart not found",
+                    Status = false,
+                    Data = null
+                };
+            }
+
+            var cartDto = new CartDto
+            {
+                Id = cart.Id,
+                CustomerId = cart.CustomerId,
+                CartItems = cart.CartItems.Select(ci => new CartItemDto
+                {
+                    Id = ci.Id,
+                    ProductId = ci.ProductId,
+                    ProductName = ci.ProductName,
+                    Quantity = ci.Quantity
+                }).ToList(),
+                AppliedCoupons = cart.Coupons.Select(c => new CouponDto
+                {
+                    Id = c.Id,
+                    Code = c.Code,
+                    DiscountPercentage = c.DiscountPercentage,
+                    ValidFrom = c.ValidFrom,
+                    ValidUntil = c.ValidUntil,
+                    Status = c.Status
+                }).ToList()
+            };
+
+            return new BaseResponse<CartDto>
+            {
+                Message = "Cart retrieved successfully",
+                Status = true,
+                Data = cartDto
+            };
+        }
         public async Task<BaseResponse<ICollection<CartDto>>> GetAll()
         {
             try

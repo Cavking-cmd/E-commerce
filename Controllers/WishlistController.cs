@@ -19,9 +19,9 @@ namespace E_commerce.Controllers
         }
 
         [HttpPost("create")]
-        public async Task<IActionResult> CreateWishlist([FromBody] CreateWishlistRequestModel model)
+        public async Task<IActionResult> CreateWishlist()
         {
-            var result = await _wishlistService.CreateAsync(model);
+            var result = await _wishlistService.CreateAsync();
             if (result.Status)
             {
                 return Ok(result);

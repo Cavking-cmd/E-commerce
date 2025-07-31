@@ -1,17 +1,22 @@
-﻿using E_commerce.Core.Dtos;
+using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.UserDtos;
 using E_commerce.Repositories.Interfaces;
 using E_commerce.Services.Interfaces;
 
 namespace E_commerce.Services.Implementations
 {
+    using Microsoft.AspNetCore.Http;
+    using System.Security.Claims;
+
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IHttpContextAccessor httpContextAccessor)
         {
             _userRepository = userRepository;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<bool> DeleteAsync(Guid id)
@@ -29,6 +34,34 @@ namespace E_commerce.Services.Implementations
                 Console.WriteLine(ex.Message);
                 return false;
             }
+        }
+
+        public async Task<UserDto> GetCurrentUserAsync()
+        {
+            var httpContext = _httpContextAccessor.HttpContext;
+            if (httpContext == null || httpContext.User == null)
+            {
+                return null;
+            }
+
+            var emailClaim = httpContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email);
+            if (emailClaim == null)
+            {
+                return null;
+            }
+
+            var user = await _userRepository.GetUserAsync(u => u.Email == emailClaim.Value);
+            if (user == null)
+            {
+                return null;
+            }
+
+            return new UserDto
+            {
+                Id = user.Id,
+                Email = user.Email,
+                UserRoles = user.UserRoles.Select(ur => ur.Role.Name).ToList()
+            };
         }
 
         public async Task<BaseResponse<UserDto>> LoginAsync(LoginRequestModel loginRequest)
@@ -84,7 +117,7 @@ namespace E_commerce.Services.Implementations
                         {
                             Id = user.Id,
                             Email = user.Email,
-                            UserRoles = user.UserRoles
+                            UserRoles = user.UserRoles.Select(ur=>ur.Role.Name).ToList()
                         }
                     };
                 }
@@ -108,7 +141,7 @@ namespace E_commerce.Services.Implementations
             }
         }
 
-        public async Task<BaseResponse<UserDto>> Update(string email, LoginRequestModel loginRequest)
+        public async Task<BaseResponse<UserDto>> Update(string email, UpdateloginRequest loginRequest)
         {
             try
             {
@@ -162,7 +195,7 @@ namespace E_commerce.Services.Implementations
                     {
                         Id = user.Id,
                         Email = user.Email,
-                        UserRoles = user.UserRoles
+                        UserRoles = user.UserRoles.Select(ur => ur.Role.Name).ToList()
                     }
                 };
             }

@@ -23,7 +23,7 @@ namespace E_commerce.Repositories.Implementattions
                 .ToListAsync();
         }
 
-        public  async Task<Cart> GetCartByIdAsync(Guid id)
+        public  async Task<Cart?> GetCartByIdAsync(Guid id)
         {
             return await _context.Set<Cart>()
                 .Include(a => a.Customer)
@@ -32,7 +32,7 @@ namespace E_commerce.Repositories.Implementattions
                 .FirstOrDefaultAsync(a=>a.Id == id && !a.IsDeleted);
         }
 
-        public async Task<Cart> GetCartAsync(Expression<Func<Cart, bool>> predicate)
+        public async Task<Cart?> GetCartAsync(Expression<Func<Cart, bool>> predicate)
         {
             return await _context.Set<Cart>()
                 .Include(a => a.Customer)

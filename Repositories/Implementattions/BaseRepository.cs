@@ -21,7 +21,7 @@ namespace E_commerce.Repositories.Implementattions
 
         public async Task CreateAsync(T entity)
         {
-             await _context.Set<T>().AddAsync(entity);
+            await _context.Set<T>().AddAsync(entity);
         }
 
         public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate)
@@ -29,13 +29,13 @@ namespace E_commerce.Repositories.Implementattions
             return await _context.Set<T>().Where(predicate).ToListAsync();
         }
 
-     
+
 
         public async Task SoftDeleteAsync(T entity)
         {
             entity.IsDeleted = true;
             _context.Set<T>().Update(entity);
-           await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         public async Task Update(T entity)
@@ -43,5 +43,12 @@ namespace E_commerce.Repositories.Implementattions
             _context.Set<T>().Update(entity);
             await _context.SaveChangesAsync();
         }
+       public async Task DeleteAsync(T entity)
+       {
+             _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
+       }
+
+
     }
 }

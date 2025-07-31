@@ -8,7 +8,7 @@ namespace E_commerce.Core.Dtos.Request
         public string Name { get; set; }
         public Guid CustomerId { get; set; }
         // Come back and set uo the dto for cart items and coupon dto 
-        public ICollection<CartItemDto> Items { get; set; } = [];
+        public ICollection<CartItemDto> CartItems { get; set; } = [];
         public ICollection<CouponDto> AppliedCoupons { get; set; } = [];
     }
 

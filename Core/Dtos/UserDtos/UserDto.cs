@@ -7,7 +7,7 @@ namespace E_commerce.Core.Dtos.UserDtos
     {
         public Guid Id { get; set; }
         public required string Email { get; set; }
-        public ICollection<UserRole> UserRoles { get; set; } = [];
+        public  List<string>  UserRoles { get; set; } = [];
     }
 
     public class LoginRequestModel

@@ -25,6 +25,7 @@ namespace E_commerce.Controllers
             return BadRequest(result);
         }
 
+
         [HttpGet("id")]
         public async Task<ActionResult<BaseResponse<CartController>>> GetById(Guid id)
         {

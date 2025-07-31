@@ -19,9 +19,9 @@ namespace E_commerce.Controllers
         }
 
         [HttpPost("create")]
-        public async Task<IActionResult> CreateOrder([FromBody] CreateOrderRequestModel model, Guid customerId)
+        public async Task<IActionResult> CreateOrder([FromBody] CreateOrderRequestModel model)
         {
-            var result = await _orderService.CreateOrderAsync(model, customerId);
+            var result = await _orderService.CreateOrderAsync(model);
             if (result.Status)
             {
                 return Ok(result);
@@ -41,9 +41,9 @@ namespace E_commerce.Controllers
         }
 
         [HttpGet("all")]
-        public async Task<IActionResult> GetAllOrdersByCustomerIdAsync(Guid customerId)
+        public async Task<IActionResult> GetAllOrders()
         {
-            var result = await _orderService.GetAllOrdersByCustomerIdAsync(customerId);
+            var result = await _orderService.GetAllOrdersAsync();
             return Ok(result);
         }
 
