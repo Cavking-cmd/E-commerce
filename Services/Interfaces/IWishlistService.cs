@@ -7,6 +7,7 @@ namespace E_commerce.Services.Interfaces
     public interface IWishlistService
     {
         Task<BaseResponse<WishlistDto>> CreateAsync();
+        Task<BaseResponse<WishlistDto>> CreateWishlistForCustomerAsync(Guid customerId);
         Task<BaseResponse<WishlistDto>> UpdateAsync(UpdateWishlistRequestModel model);
         Task<BaseResponse<bool>> DeleteAsync(Guid id);
         Task<BaseResponse<WishlistDto>> GetByIdAsync(Guid id);

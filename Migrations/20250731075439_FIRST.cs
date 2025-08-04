@@ -201,8 +201,9 @@ namespace E_commerce.Migrations
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     StockQuantity = table.Column<int>(type: "int", nullable: false),
                     ImageUrl = table.Column<string>(type: "longtext", nullable: false),
-                    CategoryId = table.Column<Guid>(type: "char(36)", nullable: false),
                     SubCategoryId = table.Column<Guid>(type: "char(36)", nullable: true),
+                    Tags = table.Column<string>(type: "longtext", nullable: true),
+                    CategoryId = table.Column<Guid>(type: "char(36)", nullable: true),
                     IsDeleted = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
@@ -213,8 +214,7 @@ namespace E_commerce.Migrations
                         name: "FK_Products_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Products_SubCategories_SubCategoryId",
                         column: x => x.SubCategoryId,
@@ -228,6 +228,7 @@ namespace E_commerce.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false),
+                    Name = table.Column<string>(type: "longtext", nullable: false),
                     CustomerId = table.Column<Guid>(type: "char(36)", nullable: false),
                     IsDeleted = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
@@ -249,6 +250,7 @@ namespace E_commerce.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false),
+                    Name = table.Column<string>(type: "longtext", nullable: false),
                     OrderDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
@@ -320,11 +322,11 @@ namespace E_commerce.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false),
+                    ProductId = table.Column<Guid>(type: "char(36)", nullable: false),
                     Rating = table.Column<int>(type: "int", nullable: false),
                     Comment = table.Column<string>(type: "longtext", nullable: true),
                     ReviewDate = table.Column<DateOnly>(type: "date", nullable: false),
                     CustomerId = table.Column<Guid>(type: "char(36)", nullable: true),
-                    ProductId = table.Column<Guid>(type: "char(36)", nullable: true),
                     IsDeleted = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
@@ -340,7 +342,8 @@ namespace E_commerce.Migrations
                         name: "FK_Reviews_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -349,9 +352,11 @@ namespace E_commerce.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
                     CartId = table.Column<Guid>(type: "char(36)", nullable: false),
                     ProductId = table.Column<Guid>(type: "char(36)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    ProductName = table.Column<string>(type: "longtext", nullable: false),
+                    PricePerUnit = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     IsDeleted = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
@@ -406,8 +411,8 @@ namespace E_commerce.Migrations
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     PriceAtPurchase = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     OrderId = table.Column<Guid>(type: "char(36)", nullable: false),
-                    ProuductId = table.Column<Guid>(type: "char(36)", nullable: false),
-                    ProductId = table.Column<Guid>(type: "char(36)", nullable: true),
+                    ProductId = table.Column<Guid>(type: "char(36)", nullable: false),
+                    ProductName = table.Column<string>(type: "longtext", nullable: false),
                     IsDeleted = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
@@ -424,7 +429,8 @@ namespace E_commerce.Migrations
                         name: "FK_OrderItems_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
@@ -522,8 +528,7 @@ namespace E_commerce.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Carts_CustomerId",
                 table: "Carts",
-                column: "CustomerId",
-                unique: true);
+                column: "CustomerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CouponOrder_OrdersId",

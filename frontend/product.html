@@ -36,8 +36,8 @@
     &copy; 2024 E-commerce
   </footer>
 
-  <script>
-    const API_BASE_URL = 'http://localhost:5000/api';
+ <script>
+    const API_BASE_URL = 'http://localhost:7180/api';
 
     function getAuthToken() {
       return localStorage.getItem('authToken');
@@ -50,9 +50,10 @@
 
     async function fetchProductDetails(productId) {
       try {
-        const response = await fetch(`${API_BASE_URL}/products/${productId}`);
+        const response = await fetch(`${API_BASE_URL}/Product/${productId}`);
         if (!response.ok) throw new Error('Failed to fetch product details');
         const product = await response.json();
+        console.log(product)
         displayProductDetails(product);
       } catch (error) {
         console.error(error);
@@ -74,38 +75,8 @@
         window.location.href = 'login.html';
         return;
       }
-      try {
-        const response = await fetch(`${API_BASE_URL}/cart/items`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          },
-          body: JSON.stringify({ productId, quantity: 1 })
-        });
-        if (!response.ok) throw new Error('Failed to add to cart');
-        const message = document.getElementById('message');
-        message.textContent = 'Added to cart successfully!';
-        message.classList.remove('hidden');
-      } catch (error) {
-        console.error(error);
-        alert('Error adding to cart. Please try again.');
-      }
     }
-
-    document.getElementById('add-to-cart-btn').addEventListener('click', async () => {
-      const productId = getProductIdFromUrl();
-      if (productId) {
-        await addToCart(productId);
-      }
-    });
-
-    const productId = getProductIdFromUrl();
-    if (productId) {
-      fetchProductDetails(productId);
-    } else {
-      document.getElementById('product-details').innerHTML = '<p class="text-red-600">No product specified.</p>';
-    }
+     
   </script>
 
 </body>

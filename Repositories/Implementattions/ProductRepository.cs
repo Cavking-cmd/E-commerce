@@ -18,26 +18,23 @@ namespace E_commerce.Repositories.Implementattions
         {
             return await _context.Set<Product>()
                 .Include(a => a.Reviews)
-                .Include(a => a.Category)
                 .Include(a => a.SubCategory)
                 .ToListAsync();
 
         }
 
-        public async Task<Product> GetProductByIdAsync(Guid id)
+        public async Task<Product?> GetProductByIdAsync(Guid id)
         {
             return await _context.Set<Product>()
                 .Include(a => a.Reviews)
-                .Include(a => a.Category)
                 .Include(a => a.SubCategory)
                 .FirstOrDefaultAsync(a => a.Id == id && a.IsDeleted == false);
         }
 
-        public async Task<Product> GetProductAsync(Expression<Func<Product, bool>> predicate)
+        public async Task<Product?> GetProductAsync(Expression<Func<Product, bool>> predicate)
         {
             return await _context.Set<Product>()
                  .Include(a => a.Reviews)
-                 .Include(a => a.Category)
                  .Include(a => a.SubCategory)
                  .FirstOrDefaultAsync(predicate);
         }

@@ -122,6 +122,7 @@ namespace E_commerce.Services.Implementations
                     CustomerId = order.CustomerId,
                     OrderItems = order.OrderItems.Select(oi => new OrderItemDto
                     {
+                        
                         ProductId = oi.ProductId,
                         ProductName = oi.ProductName,
                         PriceAtPurchase = oi.PriceAtPurchase,

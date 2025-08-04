@@ -18,7 +18,8 @@ namespace E_commerce.Services.Implementations
         private readonly IUserRoleRepository _userRoleRepository;
         private readonly IUserProfileRepository _userProfileRepository;
         private readonly IUnitOfWork _unitOfWork;
-            public   CustomerService (ICustomerRepository customerRepository, IUserRepository userRepository, IRoleRepository roleRepository , IUserRoleRepository userRoleRepository, IUserProfileRepository profileRepository,IUnitOfWork unitOfWork)
+        private readonly IWishlistService _wishlistService;
+            public   CustomerService (ICustomerRepository customerRepository, IUserRepository userRepository, IRoleRepository roleRepository , IUserRoleRepository userRoleRepository, IUserProfileRepository profileRepository, IUnitOfWork unitOfWork, IWishlistService wishlistService)
             {
                 _customerRepository = customerRepository;
                 _userRepository = userRepository;
@@ -26,6 +27,7 @@ namespace E_commerce.Services.Implementations
                 _userProfileRepository = profileRepository;
                 _userRoleRepository = userRoleRepository;
                 _unitOfWork = unitOfWork;
+                _wishlistService = wishlistService;
             }
 
         public async Task<BaseResponse<CustomerDto>> CreateCustomer(CreateCustomerRequestModel model)
@@ -117,6 +119,22 @@ namespace E_commerce.Services.Implementations
                 await _customerRepository.CreateAsync(customer);
                 await _userProfileRepository.CreateAsync(userProfile);
                 await _unitOfWork.SaveChangesAsync();
+
+                // Create a wishlist for the new customer
+                try
+                {
+                    var wishlistResponse = await _wishlistService.CreateWishlistForCustomerAsync(customer.Id);
+                    if (!wishlistResponse.Status)
+                    {
+                        // Log the error but don't fail the customer creation
+                        Console.WriteLine($"Failed to create wishlist for customer {customer.Id}: {wishlistResponse.Message}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log the exception but don't fail the customer creation
+                    Console.WriteLine($"Exception occurred while creating wishlist for customer {customer.Id}: {ex.Message}");
+                }
 
 
                 return new BaseResponse<CustomerDto>

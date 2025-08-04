@@ -19,7 +19,7 @@ namespace E_commerce.Services.Implementations
         }
 
         public async Task<BaseResponse<SubCategoryDto>> CreateSubCategory(CreateSubCategoryRequestModel model)
-        {
+        {  
             try 
             {
                 if (Validator.CheckNull(model))
@@ -74,6 +74,7 @@ namespace E_commerce.Services.Implementations
                     Status = true,
                     Data = new SubCategoryDto
                     {
+                        Id= subCategory.Id,
                         Name = model.Name,
                         Description = model.Description,
                         CategoryId = model.CategoryId

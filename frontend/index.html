@@ -31,7 +31,7 @@
   </footer>
 
   <script>
-    const API_BASE_URL = 'https://localhost:7180/api'; // Updated to match backend swagger URL
+    const API_BASE_URL = 'https://localhost:7180/api';  
 
     // Fetch and display products
     async function fetchProducts() {
@@ -39,11 +39,12 @@
         const response = await fetch(`${API_BASE_URL}/product`);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const productsResponse = await response.json();
-        displayProducts(productsResponse.data);
+        console.log(productsResponse)
+        displayProducts(productsResponse.data.$values);
       } catch (error) {
         console.error('Error fetching products:', error);
         document.getElementById('product-list').innerHTML =
-          '<p class="text-red-600">Failed to load products. Please try again later.</p>';
+          '<p class="text-red-600">Failed to load products. Please try again later.</p  >';
       }
     }
     // Render product cards

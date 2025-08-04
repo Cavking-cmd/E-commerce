@@ -73,7 +73,17 @@
         if (!response.ok) throw new Error(data.message || 'Login failed');
 
         localStorage.setItem('authToken', data.token);
-        window.location.href = 'index.html';
+        localStorage.setItem('userRoles', JSON.stringify(data.user.UserRoles || []));
+        
+        // Check if user has admin role
+        const userRoles = data.user.UserRoles || [];
+        const isAdmin = userRoles.includes('Admin') || userRoles.includes('admin') || userRoles.includes('Administrator');
+        
+        if (isAdmin) {
+          window.location.href = 'admin.html';
+        } else {
+          window.location.href = 'index.html';
+        }
       } catch (error) {
         errorMessage.textContent = error.message;
         errorMessage.classList.remove('hidden');

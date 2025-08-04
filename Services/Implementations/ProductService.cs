@@ -1,4 +1,4 @@
-﻿﻿﻿﻿using System.Linq.Expressions;
+﻿﻿using System.Linq.Expressions;
 using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.Request;
 using E_commerce.Core.Entities;
@@ -89,9 +89,17 @@ namespace E_commerce.Services.Implementations
                     Description = model.Description,
                     Price = model.Price,
                     StockQuantity = model.StockQuantity,
-                    ImageUrl = model.ImageUrl,
-                    SubCategoryId = model.SubCategoryId
+                    ImageFile = model.ImageFile != null && model.ImageFile.Length > 0 ? new byte[0] : null,
+                    ImageMimeType = model.ImageFile != null && model.ImageFile.Length > 0 ? model.ImageFile.ContentType : "image/png"
                 };
+
+                if (model.ImageFile != null && model.ImageFile.Length > 0)
+                {
+                    using var memoryStream = new MemoryStream();
+                    await model.ImageFile.CopyToAsync(memoryStream);
+                    product.ImageFile = memoryStream.ToArray();
+                    product.ImageMimeType = model.ImageFile.ContentType;
+                }
 
                 await _productRepository.CreateAsync(product);
                 await _unitOfWork.SaveChangesAsync();
@@ -107,7 +115,9 @@ namespace E_commerce.Services.Implementations
                         Description = product.Description,
                         Price = product.Price,
                         StockQuantity = product.StockQuantity,
-                        ImageUrl = product.ImageUrl,
+                        ImageMimeType = product.ImageMimeType,
+                        ImageBase64 = product.ImageFile != null ?
+                            $"data:{product.ImageMimeType};base64,{Convert.ToBase64String(product.ImageFile)}" : null,
                         SubCategoryId = product.SubCategoryId,
                     }
                 };
@@ -143,7 +153,8 @@ namespace E_commerce.Services.Implementations
                 Description = a.Description,
                 Price = a.Price,
                 StockQuantity = a.StockQuantity,
-                ImageUrl = a.ImageUrl,
+                ImageBase64 = a.ImageFile != null ?
+                    $"data:{a.ImageMimeType};base64,{Convert.ToBase64String(a.ImageFile)}" : "",
                 SubCategoryId = a.SubCategoryId,
             }).ToList();
 
@@ -180,7 +191,9 @@ namespace E_commerce.Services.Implementations
                         Description = product.Description,
                         Price = product.Price,
                         StockQuantity = product.StockQuantity,
-                        ImageUrl = product.ImageUrl,
+                        ImageMimeType = product.ImageMimeType,
+                        ImageBase64 = product.ImageFile != null ?
+                            $"data:{product.ImageMimeType};base64,{Convert.ToBase64String(product.ImageFile)}" : null,
                         SubCategoryId = product.SubCategoryId,
                     }
                 };
@@ -210,12 +223,22 @@ namespace E_commerce.Services.Implementations
                         Data = null
                     };
                 }
+
                 product.Name = model.Name;
                 product.Description = model.Description;
                 product.Price = model.Price;
                 product.StockQuantity = model.StockQuantity;
-                product.ImageUrl = model.ImageUrl;
+
+                if (model.ImageFile != null && model.ImageFile.Length > 0)
+                {
+                    using var memoryStream = new MemoryStream();
+                    await model.ImageFile.CopyToAsync(memoryStream);
+                    product.ImageFile = memoryStream.ToArray();
+                    product.ImageMimeType = model.ImageFile.ContentType;
+                }
+
                 await _productRepository.Update(product);
+
                 return new BaseResponse<ProductDto>
                 {
                     Message = "Product has been updated successfully",
@@ -226,7 +249,9 @@ namespace E_commerce.Services.Implementations
                         Description = product.Description,
                         Price = product.Price,
                         StockQuantity = product.StockQuantity,
-                        ImageUrl = product.ImageUrl,
+                        ImageMimeType = product.ImageMimeType,
+                        ImageBase64 = product.ImageFile != null ?
+                            $"data:{product.ImageMimeType};base64,{Convert.ToBase64String(product.ImageFile)}" : null,
                     }
                 };
             }
@@ -303,7 +328,9 @@ namespace E_commerce.Services.Implementations
                         Description = p.Description,
                         Price = p.Price,
                         StockQuantity = p.StockQuantity,
-                        ImageUrl = p.ImageUrl,
+                        ImageMimeType = p.ImageMimeType,
+                        ImageBase64 = p.ImageFile != null ?
+                            $"data:{p.ImageMimeType};base64,{Convert.ToBase64String(p.ImageFile)}" : null,
                         SubCategoryId = p.SubCategoryId,
                     })
                     .ToList();
@@ -335,7 +362,5 @@ namespace E_commerce.Services.Implementations
                 };
             }
         }
-
     }
 }
-

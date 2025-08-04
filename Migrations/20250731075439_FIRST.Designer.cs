@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_commerce.Migrations
 {
     [DbContext(typeof(E_commerceDbContext))]
-    [Migration("20250510024231_FIRST")]
+    [Migration("20250731075439_FIRST")]
     partial class FIRST
     {
         /// <inheritdoc />
@@ -52,10 +52,13 @@ namespace E_commerce.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId")
-                        .IsUnique();
+                    b.HasIndex("CustomerId");
 
                     b.ToTable("Carts");
                 });
@@ -75,8 +78,15 @@ namespace E_commerce.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<decimal>("PricePerUnit")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<Guid>("ProductId")
                         .HasColumnType("char(36)");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -225,6 +235,10 @@ namespace E_commerce.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime(6)");
 
@@ -259,11 +273,12 @@ namespace E_commerce.Migrations
                     b.Property<decimal>("PriceAtPurchase")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("char(36)");
 
-                    b.Property<Guid>("ProuductId")
-                        .HasColumnType("char(36)");
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -283,7 +298,7 @@ namespace E_commerce.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<Guid>("CategoryId")
+                    b.Property<Guid?>("CategoryId")
                         .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedDate")
@@ -312,6 +327,9 @@ namespace E_commerce.Migrations
                     b.Property<Guid?>("SubCategoryId")
                         .HasColumnType("char(36)");
 
+                    b.Property<string>("Tags")
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
@@ -339,7 +357,7 @@ namespace E_commerce.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("char(36)");
 
                     b.Property<int>("Rating")
@@ -670,8 +688,8 @@ namespace E_commerce.Migrations
             modelBuilder.Entity("E_commerce.Core.Entities.Cart", b =>
                 {
                     b.HasOne("E_commerce.Core.Entities.Customer", "Customer")
-                        .WithOne("Cart")
-                        .HasForeignKey("E_commerce.Core.Entities.Cart", "CustomerId")
+                        .WithMany("Carts")
+                        .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -755,7 +773,9 @@ namespace E_commerce.Migrations
 
                     b.HasOne("E_commerce.Core.Entities.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Order");
 
@@ -764,17 +784,13 @@ namespace E_commerce.Migrations
 
             modelBuilder.Entity("E_commerce.Core.Entities.Product", b =>
                 {
-                    b.HasOne("E_commerce.Core.Entities.Category", "Category")
+                    b.HasOne("E_commerce.Core.Entities.Category", null)
                         .WithMany("Products")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryId");
 
                     b.HasOne("E_commerce.Core.Entities.SubCategory", "SubCategory")
                         .WithMany("Products")
                         .HasForeignKey("SubCategoryId");
-
-                    b.Navigation("Category");
 
                     b.Navigation("SubCategory");
                 });
@@ -785,9 +801,13 @@ namespace E_commerce.Migrations
                         .WithMany("Reviews")
                         .HasForeignKey("CustomerId");
 
-                    b.HasOne("E_commerce.Core.Entities.Product", null)
+                    b.HasOne("E_commerce.Core.Entities.Product", "Product")
                         .WithMany("Reviews")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("E_commerce.Core.Entities.ShippingAddress", b =>
@@ -899,7 +919,7 @@ namespace E_commerce.Migrations
 
             modelBuilder.Entity("E_commerce.Core.Entities.Customer", b =>
                 {
-                    b.Navigation("Cart");
+                    b.Navigation("Carts");
 
                     b.Navigation("Orders");
 

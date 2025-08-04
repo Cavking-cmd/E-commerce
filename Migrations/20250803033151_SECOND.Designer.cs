@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_commerce.Migrations
 {
     [DbContext(typeof(E_commerceDbContext))]
-    [Migration("20250520181621_SECOND")]
+    [Migration("20250803033151_SECOND")]
     partial class SECOND
     {
         /// <inheritdoc />
@@ -52,10 +52,13 @@ namespace E_commerce.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId")
-                        .IsUnique();
+                    b.HasIndex("CustomerId");
 
                     b.ToTable("Carts");
                 });
@@ -75,8 +78,15 @@ namespace E_commerce.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<decimal>("PricePerUnit")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<Guid>("ProductId")
                         .HasColumnType("char(36)");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -225,6 +235,10 @@ namespace E_commerce.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime(6)");
 
@@ -259,11 +273,12 @@ namespace E_commerce.Migrations
                     b.Property<decimal>("PriceAtPurchase")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid?>("ProductId")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("char(36)");
 
-                    b.Property<Guid>("ProuductId")
-                        .HasColumnType("char(36)");
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -283,7 +298,7 @@ namespace E_commerce.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<Guid>("CategoryId")
+                    b.Property<Guid?>("CategoryId")
                         .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedDate")
@@ -292,8 +307,11 @@ namespace E_commerce.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("ImageUrl")
+                    b.Property<byte[]>("ImageFile")
                         .IsRequired()
+                        .HasColumnType("longblob");
+
+                    b.Property<string>("ImageMimeType")
                         .HasColumnType("longtext");
 
                     b.Property<bool>("IsDeleted")
@@ -311,6 +329,9 @@ namespace E_commerce.Migrations
 
                     b.Property<Guid?>("SubCategoryId")
                         .HasColumnType("char(36)");
+
+                    b.Property<string>("Tags")
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -345,8 +366,8 @@ namespace E_commerce.Migrations
                     b.Property<int>("Rating")
                         .HasColumnType("int");
 
-                    b.Property<DateOnly>("ReviewDate")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("ReviewDate")
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
@@ -379,6 +400,15 @@ namespace E_commerce.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("3c91647c-3681-4912-b666-9fd5a31a8b09"),
+                            CreatedDate = new DateTime(2025, 8, 3, 3, 31, 50, 174, DateTimeKind.Utc).AddTicks(4455),
+                            IsDeleted = false,
+                            Name = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("E_commerce.Core.Entities.ShippingAddress", b =>
@@ -476,6 +506,16 @@ namespace E_commerce.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("32a95c71-7631-45e7-aab2-694498a2fb9d"),
+                            CreatedDate = new DateTime(2025, 8, 3, 3, 31, 50, 174, DateTimeKind.Utc).AddTicks(4942),
+                            Email = "admin@yopmail.com",
+                            IsDeleted = false,
+                            Password = "$2a$11$KEKSK.ruefTgSYMEyPOfh.MG7zn2ADIcVym9SuRr/VLPCGMrEkJOO"
+                        });
                 });
 
             modelBuilder.Entity("E_commerce.Core.Entities.UserProfile", b =>
@@ -535,6 +575,24 @@ namespace E_commerce.Migrations
                         .IsUnique();
 
                     b.ToTable("UserProfiles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("b9dbfaea-28e3-46bb-a4dc-8d3ba266dab8"),
+                            AddressLine = "123 Admin Street",
+                            City = "Admin City",
+                            Country = "Adminland",
+                            CreatedDate = new DateTime(2025, 8, 3, 3, 31, 50, 174, DateTimeKind.Utc).AddTicks(5022),
+                            Email = "admin1@yopmail.com",
+                            FirstName = "Admin",
+                            IsDeleted = false,
+                            LastName = "User",
+                            PhoneNumber = "08000000000",
+                            PostalCode = "100001",
+                            State = "Admin State",
+                            UserId = new Guid("32a95c71-7631-45e7-aab2-694498a2fb9d")
+                        });
                 });
 
             modelBuilder.Entity("E_commerce.Core.Entities.UserRole", b =>
@@ -562,6 +620,16 @@ namespace E_commerce.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("UserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("cb0b7dfe-1ea4-4694-abb9-6e1143fb1487"),
+                            CreatedDate = new DateTime(2025, 8, 3, 3, 31, 50, 174, DateTimeKind.Utc).AddTicks(5117),
+                            IsDeleted = false,
+                            RoleId = new Guid("3c91647c-3681-4912-b666-9fd5a31a8b09"),
+                            UserId = new Guid("32a95c71-7631-45e7-aab2-694498a2fb9d")
+                        });
                 });
 
             modelBuilder.Entity("E_commerce.Core.Entities.Vendor", b =>
@@ -670,8 +738,8 @@ namespace E_commerce.Migrations
             modelBuilder.Entity("E_commerce.Core.Entities.Cart", b =>
                 {
                     b.HasOne("E_commerce.Core.Entities.Customer", "Customer")
-                        .WithOne("Cart")
-                        .HasForeignKey("E_commerce.Core.Entities.Cart", "CustomerId")
+                        .WithMany("Carts")
+                        .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -755,7 +823,9 @@ namespace E_commerce.Migrations
 
                     b.HasOne("E_commerce.Core.Entities.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Order");
 
@@ -764,17 +834,13 @@ namespace E_commerce.Migrations
 
             modelBuilder.Entity("E_commerce.Core.Entities.Product", b =>
                 {
-                    b.HasOne("E_commerce.Core.Entities.Category", "Category")
+                    b.HasOne("E_commerce.Core.Entities.Category", null)
                         .WithMany("Products")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryId");
 
                     b.HasOne("E_commerce.Core.Entities.SubCategory", "SubCategory")
                         .WithMany("Products")
                         .HasForeignKey("SubCategoryId");
-
-                    b.Navigation("Category");
 
                     b.Navigation("SubCategory");
                 });
@@ -903,7 +969,7 @@ namespace E_commerce.Migrations
 
             modelBuilder.Entity("E_commerce.Core.Entities.Customer", b =>
                 {
-                    b.Navigation("Cart");
+                    b.Navigation("Carts");
 
                     b.Navigation("Orders");
 

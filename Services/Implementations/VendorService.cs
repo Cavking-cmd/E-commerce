@@ -222,9 +222,9 @@ namespace E_commerce.Services.Implementations
                     Description = a.Description,
                     Email = a.Email,
                     StoreLocation = a.StoreLocation,
+                    ProfileId = a.User.Profile.Id,
                     UserProfile = new UserProfileDto
                     {
-                        Id = a.User.Profile.Id,
                         UserId = a.User.Profile.UserId,
                         Email = a.User.Profile.Email,
                         FirstName = a.User.Profile.FirstName,
@@ -282,9 +282,9 @@ namespace E_commerce.Services.Implementations
                         Email = vendor.Email,
                         BusinessName = vendor.BusinessName,
                         StoreLocation = vendor.StoreLocation,
+                        ProfileId=vendor.User.Profile.Id,
                         UserProfile = new UserProfileDto
                         {
-                            Id = vendor.User.Profile.Id,
                             UserId = vendor.User.Profile.UserId,
                             Email = vendor.User.Profile.Email,
                             FirstName = vendor.User.Profile.FirstName,

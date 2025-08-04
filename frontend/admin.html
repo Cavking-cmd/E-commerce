@@ -5,43 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Admin Area - E-commerce</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .nav-link {
+      @apply px-4 py-2 rounded-md hover:bg-gray-100 transition-colors;
+    }
+    .nav-link.active {
+      @apply bg-blue-600 text-white;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+  </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col">
 
   <!-- Header -->
   <header class="bg-white shadow p-4 flex justify-between items-center">
     <h1 class="text-2xl font-bold text-blue-600">E-commerce Admin</h1>
-    <nav>
-      <a href="index.html" class="mr-4 hover:text-blue-800">Home</a>
-      <a href="admin.html" class="mr-4 text-blue-800 font-semibold">Admin</a>
-      <a href="login.html" class="hover:text-blue-800">Login</a>
+    <nav class="flex space-x-2">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="admin.html" class="nav-link active">Admin</a>
+      <a href="login.html" class="nav-link">Login</a>
     </nav>
   </header>
 
   <!-- Main -->
   <main class="flex-grow container mx-auto p-4 max-w-6xl">
-    <h2 class="text-xl font-semibold mb-4">Admin Dashboard</h2>
+    <h2 class="text-2xl font-bold mb-6">Admin Dashboard</h2>
 
-    <section id="user-management" class="mb-8">
-      <h3 class="text-lg font-semibold mb-2">User Management</h3>
-      <div id="users-list" class="bg-white p-4 rounded shadow space-y-2">
-        <p class="text-gray-500">Loading users...</p>
+    <!-- Tab Navigation -->
+    <div class="bg-white rounded-lg shadow mb-6">
+      <div class="border-b border-gray-200">
+        <nav class="flex -mb-px">
+          <button id="orders-tab" class="tab-button py-4 px-6 text-center border-b-2 border-blue-500 text-blue-600 font-medium">
+            Order Management
+          </button>
+          <a href="product-management.html" class="tab-button py-4 px-6 text-center text-gray-500 hover:text-gray-700 font-medium">
+            Product Management
+          </a>
+          <button id="users-tab" class="tab-button py-4 px-6 text-center text-gray-500 hover:text-gray-700 font-medium">
+            User Management
+          </button>
+        </nav>
       </div>
-    </section>
+    </div>
 
-    <section id="product-management" class="mb-8">
-      <h3 class="text-lg font-semibold mb-2">Product Management</h3>
-      <div id="admin-products-list" class="bg-white p-4 rounded shadow space-y-2">
-        <p class="text-gray-500">Loading products...</p>
+    <!-- Orders Tab Content -->
+    <div id="orders-content" class="tab-content active">
+      <div class="bg-white rounded-lg shadow p-6 mb-6">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-semibold">Order Management</h3>
+          <div class="relative">
+            <input type="text" placeholder="Search orders..." class="border border-gray-300 rounded-md px-4 py-2 w-64">
+          </div>
+        </div>
+        <div id="orders-loading" class="text-center py-4"></div>
+        <div id="admin-orders-list" class="space-y-4">
+          <p class="text-gray-500 text-center">Loading orders...</p>
+        </div>
+        <div id="orders-error" class="text-center py-4"></div>
       </div>
-    </section>
+    </div>
 
-    <section id="order-management" class="mb-8">
-      <h3 class="text-lg font-semibold mb-2">Order Management</h3>
-      <div id="admin-orders-list" class="bg-white p-4 rounded shadow space-y-2">
-        <p class="text-gray-500">Loading orders...</p>
+    <!-- Products Tab Content -->
+    <div id="products-content" class="tab-content">
+      <div class="bg-white rounded-lg shadow p-6 mb-6">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-semibold">Product Management</h3>
+          <button id="add-product-btn" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+            Add New Product
+          </button>
+        </div>
+        
+        <!-- Product Management Sections -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-semibold mb-2">Categories</h4>
+            <button class="text-blue-600 text-sm mb-2">Manage Categories</button>
+            <div class="text-sm text-gray-500">Total: <span id="category-count">0</span></div>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-semibold mb-2">Subcategories</h4>
+            <button class="text-blue-600 text-sm mb-2">Manage Subcategories</button>
+            <div class="text-sm text-gray-500">Total: <span id="subcategory-count">0</span></div>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <h4 class="font-semibold mb-2">Products</h4>
+            <button class="text-blue-600 text-sm mb-2">Manage Products</button>
+            <div class="text-sm text-gray-500">Total: <span id="product-count">0</span></div>
+          </div>
+        </div>
+        
+        <div id="products-loading" class="text-center py-4"></div>
+        <div id="admin-products-list" class="space-y-4">
+          <p class="text-gray-500 text-center">Loading products...</p>
+        </div>
+        <div id="products-error" class="text-center py-4"></div>
       </div>
-    </section>
+    </div>
+
+    <!-- Users Tab Content -->
+    <div id="users-content" class="tab-content">
+      <div class="bg-white rounded-lg shadow p-6 mb-6">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-semibold">User Management</h3>
+          <div class="relative">
+            <input type="text" placeholder="Search users..." class="border border-gray-300 rounded-md px-4 py-2 w-64">
+          </div>
+        </div>
+        <div id="users-loading" class="text-center py-4"></div>
+        <div id="users-list" class="space-y-4">
+          <p class="text-gray-500 text-center">Loading users...</p>
+        </div>
+        <div id="users-error" class="text-center py-4"></div>
+      </div>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -50,7 +131,7 @@
   </footer>
 
   <script>
-    const API_BASE_URL = 'http://localhost:5000/api';
+    const API_BASE_URL = 'http://localhost:7180/api';
 
     function getAuthToken() {
       return localStorage.getItem('authToken');
@@ -64,9 +145,13 @@
       return token;
     }
 
-    async function fetchData(endpoint, onSuccess, onErrorElementId) {
+    async function fetchData(endpoint, onSuccess, onErrorElementId, onLoadingElementId = null) {
       const token = redirectToLoginIfNoToken();
       if (!token) return;
+
+      if (onLoadingElementId) {
+        document.getElementById(onLoadingElementId).innerHTML = '<p class="text-gray-600">Loading...</p>';
+      }
 
       try {
         const response = await fetch(`${API_BASE_URL}${endpoint}`, {
@@ -75,63 +160,209 @@
 
         if (!response.ok) throw new Error('Fetch failed');
         const data = await response.json();
+        if (onLoadingElementId) {
+          document.getElementById(onLoadingElementId).innerHTML = '';
+        }
         onSuccess(data);
       } catch (error) {
         console.error(error);
-        document.getElementById(onErrorElementId).innerHTML = `<p class="text-red-600">Failed to load data.</p>`;
+        document.getElementById(onErrorElementId).innerHTML = `<p class="text-red-600">Failed to load data. Error: ${error.message}</p>`;
+        if (onLoadingElementId) {
+          document.getElementById(onLoadingElementId).innerHTML = '';
+        }
       }
     }
 
     function displayUsers(users) {
       const container = document.getElementById('users-list');
+      if (!container) return;
       container.innerHTML = '';
       if (!Array.isArray(users) || users.length === 0) {
-        container.innerHTML = '<p class="text-gray-600">No users found.</p>';
+        container.innerHTML = '<p class="text-gray-600 text-center">No users found.</p>';
         return;
       }
+      
       users.forEach(user => {
         const userDiv = document.createElement('div');
-        userDiv.className = 'border border-gray-300 rounded p-2 flex justify-between items-center';
-        userDiv.textContent = `${user.name} (${user.email})`;
+        userDiv.className = 'border border-gray-200 rounded-lg p-4 flex justify-between items-center';
+        userDiv.innerHTML = `
+          <div>
+            <h4 class="font-semibold">${user.name || 'N/A'}</h4>
+            <p class="text-gray-600">${user.email || 'N/A'}</p>
+          </div>
+          <div class="flex space-x-2">
+            <button class="bg-blue-100 text-blue-800 px-3 py-1 rounded-md text-sm">Edit</button>
+            <button class="bg-red-100 text-red-800 px-3 py-1 rounded-md text-sm">Delete</button>
+          </div>
+        `;
         container.appendChild(userDiv);
       });
     }
 
     function displayProducts(products) {
       const container = document.getElementById('admin-products-list');
+      if (!container) return;
       container.innerHTML = '';
       if (!Array.isArray(products) || products.length === 0) {
-        container.innerHTML = '<p class="text-gray-600">No products found.</p>';
+        container.innerHTML = '<p class="text-gray-600 text-center">No products found.</p>';
         return;
       }
+      
       products.forEach(product => {
         const productDiv = document.createElement('div');
-        productDiv.className = 'border border-gray-300 rounded p-2 flex justify-between items-center';
-        productDiv.textContent = `${product.name} - $${parseFloat(product.price).toFixed(2)}`;
+        productDiv.className = 'border border-gray-200 rounded-lg p-4 flex justify-between items-center';
+        productDiv.innerHTML = `
+          <div>
+            <h4 class="font-semibold">${product.name || 'N/A'}</h4>
+            <p class="text-gray-600">$${parseFloat(product.price || 0).toFixed(2)}</p>
+          </div>
+          <div class="flex space-x-2">
+            <button class="bg-blue-100 text-blue-800 px-3 py-1 rounded-md text-sm">Edit</button>
+            <button class="bg-red-100 text-red-800 px-3 py-1 rounded-md text-sm">Delete</button>
+          </div>
+        `;
         container.appendChild(productDiv);
       });
     }
 
     function displayOrders(orders) {
       const container = document.getElementById('admin-orders-list');
+      if (!container) return;
       container.innerHTML = '';
       if (!Array.isArray(orders) || orders.length === 0) {
-        container.innerHTML = '<p class="text-gray-600">No orders found.</p>';
+        container.innerHTML = '<p class="text-gray-600 text-center">No orders found.</p>';
         return;
       }
+      
       orders.forEach(order => {
         const orderDiv = document.createElement('div');
-        orderDiv.className = 'border border-gray-300 rounded p-2 flex justify-between items-center';
-        orderDiv.textContent = `Order #${order.id} - Status: ${order.status}`;
+        orderDiv.className = 'border border-gray-200 rounded-lg p-4';
+        orderDiv.innerHTML = `
+          <div class="flex justify-between items-center mb-2">
+            <h4 class="font-semibold">Order #${order.id || 'N/A'}</h4>
+            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">${order.status || 'N/A'}</span>
+          </div>
+          <div class="flex justify-between text-sm text-gray-600 mb-2">
+            <span>Customer: ${order.customerName || 'N/A'}</span>
+            <span>Date: ${order.date || 'N/A'}</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="font-semibold">$${parseFloat(order.total || 0).toFixed(2)}</span>
+            <div class="flex space-x-2">
+              <select class="border border-gray-300 rounded-md px-2 py-1 text-sm">
+                <option>Processing</option>
+                <option>Shipped</option>
+                <option>Delivered</option>
+                <option>Cancelled</option>
+              </select>
+              <button class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">Update</button>
+            </div>
+          </div>
+        `;
         container.appendChild(orderDiv);
       });
     }
 
-    // Load data on page load
-    fetchData('/admin/users', displayUsers, 'users-list');
-    fetchData('/admin/products', displayProducts, 'admin-products-list');
-    fetchData('/admin/orders', displayOrders, 'admin-orders-list');
-  </script>
+    // Tab switching functionality
+    function setupTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons and contents
+          tabButtons.forEach(btn => btn.classList.remove('text-blue-600', 'border-blue-500'));
+          tabButtons.forEach(btn => btn.classList.add('text-gray-500'));
+          tabContents.forEach(content => content.classList.remove('active'));
+          
+          // Add active class to clicked button
+          button.classList.add('text-blue-600', 'border-blue-500');
+          button.classList.remove('text-gray-500');
+          
+          // Show corresponding content
+          const tabId = button.id.replace('-tab', '-content');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    }
 
+    // Fetch categories, subcategories, and products
+    async function fetchCategories() {
+      const token = redirectToLoginIfNoToken();
+      if (!token) return;
+
+      try {
+        const response = await fetch(`${API_BASE_URL}/Category`, {
+          headers: { 'Authorization': 'Bearer ' + token }
+        });
+
+        if (!response.ok) throw new Error('Failed to fetch categories');
+        const data = await response.json();
+        document.getElementById('category-count').textContent = data.data ? data.data.length : 0;
+        return data.data || [];
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+        document.getElementById('category-count').textContent = '0';
+        return [];
+      }
+    }
+
+    async function fetchSubcategories() {
+      const token = redirectToLoginIfNoToken();
+      if (!token) return;
+
+      try {
+        const response = await fetch(`${API_BASE_URL}/SubCategory`, {
+          headers: { 'Authorization': 'Bearer ' + token }
+        });
+
+        if (!response.ok) throw new Error('Failed to fetch subcategories');
+        const data = await response.json();
+        document.getElementById('subcategory-count').textContent = data.data ? data.data.length : 0;
+        return data.data || [];
+      } catch (error) {
+        console.error('Error fetching subcategories:', error);
+        document.getElementById('subcategory-count').textContent = '0';
+        return [];
+      }
+    }
+
+    async function fetchProducts() {
+      const token = redirectToLoginIfNoToken();
+      if (!token) return;
+
+      document.getElementById('products-loading').innerHTML = '<p class="text-gray-600">Loading products...</p>';
+      
+      try {
+        const response = await fetch(`${API_BASE_URL}/Product`, {
+          headers: { 'Authorization': 'Bearer ' + token }
+        });
+
+        if (!response.ok) throw new Error('Failed to fetch products');
+        const data = await response.json();
+        document.getElementById('products-loading').innerHTML = '';
+        document.getElementById('product-count').textContent = data.data ? data.data.length : 0;
+        displayProducts(data.data || []);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        document.getElementById('products-error').innerHTML = `<p class="text-red-600">Failed to load products. Error: ${error.message}</p>`;
+        document.getElementById('products-loading').innerHTML = '';
+        document.getElementById('product-count').textContent = '0';
+      }
+    }
+
+    // Load data on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      setupTabs();
+      
+      // Initially load orders only
+      fetchData('/Order/all', displayOrders, 'orders-error', 'orders-loading');
+      
+      // Load categories, subcategories, and products
+      fetchCategories();
+      fetchSubcategories();
+      fetchProducts();
+    });
+  </script>
 </body>
 </html>

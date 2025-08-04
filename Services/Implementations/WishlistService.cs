@@ -1,4 +1,4 @@
-﻿using System.Net.WebSockets;
+﻿  using System.Net.WebSockets;
 using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.WishlistDtos;
 using E_commerce.Core.Dtos.WishlistItemDtos;
@@ -33,19 +33,24 @@ namespace E_commerce.Services.Implementations
                 };
             }
 
-            var existing = await _wishlistRepository.GetWishlistAsync(w => w.CustomerId == currentUser.Id);
+            return await CreateWishlistForCustomerAsync(currentUser.Id);
+        }
+
+        public async Task<BaseResponse<WishlistDto>> CreateWishlistForCustomerAsync(Guid customerId)
+        {
+            var existing = await _wishlistRepository.GetWishlistAsync(w => w.CustomerId == customerId);
             if (existing != null)
             {
                 return new BaseResponse<WishlistDto>
                 {
-                    Message = "Wishlist already exists for this user.",
+                    Message = "Wishlist already exists for this customer.",
                     Status = false
                 };
             }
 
             var wishlist = new Wishlist
             {
-                CustomerId = currentUser.Id,
+                CustomerId = customerId,
                 WishlistItems = new List<WishlistItem>()
             };
 

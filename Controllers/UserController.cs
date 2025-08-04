@@ -21,7 +21,7 @@ namespace E_commerce.Controllers
         //[Authorize]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestModel model)
-        {
+            {
             var result = await _userService.LoginAsync(model);
             if (result.Status && result.Data != null)
             {

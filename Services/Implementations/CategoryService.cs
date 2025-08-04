@@ -9,14 +9,16 @@ namespace E_commerce.Services.Implementations
     public class CategoryService : ICategoryService
     {
         private readonly ICategoryRepository _categoryRepository;
-        public CategoryService(ICategoryRepository categoryRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public CategoryService(ICategoryRepository categoryRepository, IUnitOfWork unitOfWork)
         {
             _categoryRepository = categoryRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<BaseResponse<CategoryDto>> CreateCategory(CreateCategoryRequestModel model)
         {
-            //qwertyuio;p
+            
             try
             {
                 if (Validator.CheckNull(model))
@@ -53,12 +55,14 @@ namespace E_commerce.Services.Implementations
                     Description = model.Description,
                 };
                 await _categoryRepository.CreateAsync(category);
+                await _unitOfWork.SaveChangesAsync();
                 return new BaseResponse<CategoryDto>
                 {
                     Message = "Category created Sucessfully",
                     Status = true,
                     Data = new CategoryDto
                     {
+                        Id= category.Id,
                         Name = model.Name,
                         Description = model.Description
                     }
