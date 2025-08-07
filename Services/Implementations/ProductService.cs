@@ -1,6 +1,7 @@
 ﻿﻿using System.Linq.Expressions;
 using E_commerce.Core.Dtos;
 using E_commerce.Core.Dtos.Request;
+using E_commerce.Core.Dtos.Response;
 using E_commerce.Core.Entities;
 using E_commerce.Repositories.Interfaces;
 using E_commerce.Services.Interfaces;
@@ -164,6 +165,69 @@ namespace E_commerce.Services.Implementations
                 Status = true,
                 Data = listOfProducts
             };
+        }
+
+        public async Task<BaseResponse<PaginatedResponse<ProductDto>>> GetAllPaginatedAsync(PaginationParams paginationParams)
+        {
+            try
+            {
+                var allProducts = await _productRepository.GetAllProductsAsync();
+                if (allProducts == null)
+                {
+                    return new BaseResponse<PaginatedResponse<ProductDto>>
+                    {
+                        Message = "Products not found",
+                        Status = false,
+                        Data = null
+                    };
+                }
+
+                var totalCount = allProducts.Count;
+                var totalPages = (int)Math.Ceiling(totalCount / (double)paginationParams.PageSize);
+
+                var products = allProducts
+                    .Skip((paginationParams.PageNumber - 1) * paginationParams.PageSize)
+                    .Take(paginationParams.PageSize)
+                    .Select(a => new ProductDto
+                    {
+                        Id = a.Id,
+                        Name = a.Name,
+                        Description = a.Description,
+                        Price = a.Price,
+                        StockQuantity = a.StockQuantity,
+                        ImageBase64 = a.ImageFile != null ?
+                            $"data:{a.ImageMimeType};base64,{Convert.ToBase64String(a.ImageFile)}" : "",
+                        SubCategoryId = a.SubCategoryId,
+                    })
+                    .ToList();
+
+                var paginatedResponse = new PaginatedResponse<ProductDto>
+                {
+                    PageNumber = paginationParams.PageNumber,
+                    PageSize = paginationParams.PageSize,
+                    TotalCount = totalCount,
+                    TotalPages = totalPages,
+                    HasPrevious = paginationParams.PageNumber > 1,
+                    HasNext = paginationParams.PageNumber < totalPages,
+                    Data = products
+                };
+
+                return new BaseResponse<PaginatedResponse<ProductDto>>
+                {
+                    Message = "Products retrieved successfully",
+                    Status = true,
+                    Data = paginatedResponse
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse<PaginatedResponse<ProductDto>>
+                {
+                    Message = ex.Message,
+                    Status = false,
+                    Data = null
+                };
+            }
         }
 
         public async Task<BaseResponse<ProductDto>> GetAsync(Guid id)

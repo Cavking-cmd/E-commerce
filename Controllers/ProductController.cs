@@ -24,6 +24,19 @@ namespace E_commerce.Controllers
             return Ok(result);
         }
 
+        [HttpGet("paginated")]
+        public async Task<IActionResult> GetAllProductsPaginated([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
+        {
+            var paginationParams = new PaginationParams
+            {
+                PageNumber = pageNumber,
+                PageSize = pageSize
+            };
+
+            var result = await _productService.GetAllPaginatedAsync(paginationParams);
+            return Ok(result);
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProduct(Guid id)
         {

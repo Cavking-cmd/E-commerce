@@ -19,16 +19,18 @@ namespace E_commerce.Services.Implementations
         private readonly IUserProfileRepository _userProfileRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IWishlistService _wishlistService;
-            public   CustomerService (ICustomerRepository customerRepository, IUserRepository userRepository, IRoleRepository roleRepository , IUserRoleRepository userRoleRepository, IUserProfileRepository profileRepository, IUnitOfWork unitOfWork, IWishlistService wishlistService)
-            {
-                _customerRepository = customerRepository;
-                _userRepository = userRepository;
-                _roleRepository = roleRepository;
-                _userProfileRepository = profileRepository;
-                _userRoleRepository = userRoleRepository;
-                _unitOfWork = unitOfWork;
-                _wishlistService = wishlistService;
-            }
+        private readonly ICartService _cartService;
+        public CustomerService(ICustomerRepository customerRepository, IUserRepository userRepository, IRoleRepository roleRepository, IUserRoleRepository userRoleRepository, IUserProfileRepository profileRepository, IUnitOfWork unitOfWork, IWishlistService wishlistService, ICartService cartService)
+        {
+            _customerRepository = customerRepository;
+            _userRepository = userRepository;
+            _roleRepository = roleRepository;
+            _userProfileRepository = profileRepository;
+            _userRoleRepository = userRoleRepository;
+            _unitOfWork = unitOfWork;
+            _wishlistService = wishlistService;
+            _cartService = cartService;
+        }
 
         public async Task<BaseResponse<CustomerDto>> CreateCustomer(CreateCustomerRequestModel model)
         {
@@ -126,16 +128,43 @@ namespace E_commerce.Services.Implementations
                     var wishlistResponse = await _wishlistService.CreateWishlistForCustomerAsync(customer.Id);
                     if (!wishlistResponse.Status)
                     {
-                        // Log the error but don't fail the customer creation
-                        Console.WriteLine($"Failed to create wishlist for customer {customer.Id}: {wishlistResponse.Message}");
+                        return new BaseResponse<CustomerDto>
+                        {
+                            Message = $"Failed to create wishlist for customer {customer.Id}: {wishlistResponse.Message}",
+                            Status = false,
+                            Data = null
+                        };
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return new BaseResponse<CustomerDto>
+                    {
+                        Message = $"Exception occurred while creating wishlist for customer {customer.Id}: {ex.Message}",
+                        Status = false,
+                        Data = null
+                    };
+                  }
+
+                // Create a cart for the new customer
+                try
+                {
+                    var cartResponse = await _cartService.CreateCart(new CreateCartRequestModel { Name = $"Cart1" });
+                    if (!cartResponse.Status)
+                    {
+                        return new BaseResponse<CustomerDto>
+                        {
+                            Message = $"Failed to create cart for customer {customer.Id}: {cartResponse.Message}",
+                            Status = false,
+                            Data = null
+                        };
                     }
                 }
                 catch (Exception ex)
                 {
                     // Log the exception but don't fail the customer creation
-                    Console.WriteLine($"Exception occurred while creating wishlist for customer {customer.Id}: {ex.Message}");
+                    Console.WriteLine($"Exception occurred while creating cart for customer {customer.Id}: {ex.Message}");
                 }
-
 
                 return new BaseResponse<CustomerDto>
                 {
